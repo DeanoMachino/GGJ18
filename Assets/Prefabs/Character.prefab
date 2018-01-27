@@ -104,6 +104,8 @@ MonoBehaviour:
   groundDamping: 50
   inAirDamping: 5
   jumpHeight: 2
+  projectilePrefab: {fileID: 1439703524313182, guid: fda89507783a2d144a6aeabc66058f80,
+    type: 2}
 --- !u!114 &114976561852596296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,7 +121,7 @@ MonoBehaviour:
   _skinWidth: 0.02
   platformMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 1024
   triggerMask:
     serializedVersion: 2
     m_Bits: 0
