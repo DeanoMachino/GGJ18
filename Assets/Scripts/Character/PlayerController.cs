@@ -106,7 +106,9 @@ public class PlayerController : MonoBehaviour {
             GameObject projectileGO = Instantiate(projectilePrefab) as GameObject;
             projectileGO.transform.position = transform.position;
             Projectile projectile = projectileGO.GetComponent<Projectile>();
-            projectile.Initialise(_playerID, GetAttackDirection(), _chargingProgress * 10);
+            float velocity = _chargingProgress * 20;
+            float lifetime = 3;
+            projectile.Initialise(_playerID, GetAttackDirection(), velocity, lifetime);
             Debug.Log("Attack released");
         }
         _chargingProgress = 0;
@@ -133,43 +135,13 @@ public class PlayerController : MonoBehaviour {
             _velocity.y = 0;
         }
 
-        if (Input.GetAxis(GetControlString(PlayerControls.Movement)) > 0) {
-            normalizedHorizontalSpeed = 1;
-            if (transform.localScale.x < 0f) {
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            }
-
-            if (_controller.IsGrounded) {
-                //_animator.Play(Animator.StringToHash("Run"));
-            }
-        } else if (Input.GetAxis(GetControlString(PlayerControls.Movement)) < 0) {
-            normalizedHorizontalSpeed = -1;
-            if (transform.localScale.x > 0f) {
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            }
-            if (_controller.IsGrounded) {
-                //_animator.Play(Animator.StringToHash("Run"));
-            }
-        } else {
-            normalizedHorizontalSpeed = 0;
-
-            if (_controller.IsGrounded) {
-                //_animator.Play(Animator.StringToHash("Idle"));
-            }
-        }
-
-        // we can only jump whilst grounded
-        if (_controller.IsGrounded && Input.GetButtonDown(GetControlString(PlayerControls.Jump))) {
-            _velocity.y = Mathf.Sqrt(2f * jumpHeight * -GameManager.GRAVITY);
-            //_animator.Play(Animator.StringToHash("Jump"));
-        }
-
-        // apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
-        var smoothedMovementFactor = _controller.IsGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
-        _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
+        bool moving = ProcessMove();
+        bool jumping = ProcessJump();
 
         // apply gravity before moving
-        _velocity.y += GameManager.GRAVITY * Time.deltaTime;
+        if (!_controller.IsGrounded) {
+            _velocity.y += GameManager.GRAVITY * Time.deltaTime;
+        }
 
         // if holding down bump up our movement amount and turn off one way platform detection for a frame.
         // this lets us jump down through one way platforms
@@ -182,6 +154,55 @@ public class PlayerController : MonoBehaviour {
 
         // grab our current _velocity to use as a base for all calculations
         _velocity = _controller.velocity;
+
+        UpdateAnimation(moving, jumping);
+    }
+
+    private bool ProcessMove() {
+        float movementInput = Input.GetAxis(GetControlString(PlayerControls.Movement));
+        float targetSpeed = 0;
+
+        if (movementInput > 0) {
+            targetSpeed = runSpeed;
+        } else if (movementInput < 0) {
+            targetSpeed = -runSpeed;
+        }
+
+        _velocity.x = movementInput * runSpeed;
+
+        // Move the player
+        if (movementInput > 0 && transform.localScale.x < 0 || movementInput < 0 && transform.localScale.x > 0) {
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+        
+        // Apply horizontal smoothing.
+        float smoothedMovementFactor = _controller.IsGrounded ? groundDamping : inAirDamping;
+        _velocity.x = Mathf.SmoothDamp(_velocity.x, targetSpeed, ref _velocity.x, Time.deltaTime * smoothedMovementFactor);
+
+        return movementInput != 0;
+    }
+
+    private bool ProcessJump() {
+        bool jumpInput = Input.GetButtonDown(GetControlString(PlayerControls.Jump));
+
+        // Jump if the player is on the ground.
+        if (_controller.IsGrounded && jumpInput) {
+            _velocity.y = Mathf.Sqrt(2f * jumpHeight * -GameManager.GRAVITY);
+        }
+
+        return jumpInput;
+    }
+
+    private void UpdateAnimation(bool moving, bool jumping) {
+        if (_controller.IsGrounded) {
+            if (jumping) {
+                //_animator.Play(Animator.StringToHash("Jump"));
+            } else if (moving) {
+                //_animator.Play(Animator.StringToHash("Run");
+            } else {
+                //_animator.Play(Animator.StringToHash("Idle");
+            }
+        }
     }
 
     private string GetControlString(PlayerControls control) {
