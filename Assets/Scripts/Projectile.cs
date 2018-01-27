@@ -7,25 +7,28 @@ public class Projectile : MonoBehaviour
     private int _playerID;
 
     Rigidbody2D Rigidbody;
-    public float TimeAfterDestroy;
 
     void Start()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    public void Initialise(int playerID, Vector2 initialDirection, float velocity) {
+    public void Initialise(int playerID, Vector2 initialDirection, float velocity, float lifetime) {
         if (Rigidbody == null) {
             Rigidbody = GetComponent<Rigidbody2D>();
         }
         Rigidbody.AddForce(initialDirection * velocity, ForceMode2D.Impulse);
+        StartCoroutine(DestroyProjectile(lifetime));
     }
 
-    void Update()
+    void FixedUpdate()
     {
         UpdateRotation();
+    }
 
-        Destroy(gameObject, TimeAfterDestroy);
+    private IEnumerator DestroyProjectile(float lifetime) {
+        yield return new WaitForSeconds(lifetime);
+        Destroy(gameObject);
     }
 
     void UpdateRotation()
