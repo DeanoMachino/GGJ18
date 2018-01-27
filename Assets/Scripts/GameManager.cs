@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour {
 
     public static float GRAVITY = -25f;
 
+    private List<PlayerController> _players;
+
     private void Awake() {
         Instance = this;
     }
@@ -21,4 +23,12 @@ public class GameManager : MonoBehaviour {
 	private void Update () {
 		
 	}
+
+    public void StartGame() {
+        InitialiseLevel();
+    }
+
+    private void InitialiseLevel() {
+
+    }
 }
