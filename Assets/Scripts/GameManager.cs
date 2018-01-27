@@ -23,8 +23,13 @@ public class GameManager : MonoBehaviour {
 	private void Update () {
 		
 	}
+
+    void Players(int QuantPlayers)
+    {
+        
+    }
 }
-public class Players
+public class Player
 {
     public GameObject PlayerReference;
     public string Name;
