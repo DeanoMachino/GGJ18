@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Select what you want to update, index of player that needs to be updated, index of player of killed
-    void UpdateScore(Score WhatToUpdate, int IndexPlayer, int IndexKilled)
+    public void UpdateScore(Score WhatToUpdate, int IndexPlayer, int IndexKilled)
     {
         switch (WhatToUpdate)
         {

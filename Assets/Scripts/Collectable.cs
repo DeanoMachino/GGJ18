@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    Parts Part;
+    public Parts Part;
     SpriteRenderer SR;
 
     void Start()

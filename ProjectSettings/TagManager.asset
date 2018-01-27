@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Projectile
   - Spawns
+  - Collectable
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Character
   - Projectile
   - Environment
-  - 
+  - Collectable
   - 
   - 
   - 

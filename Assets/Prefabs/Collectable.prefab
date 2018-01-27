@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212483490162027516}
   - component: {fileID: 114016760145486590}
   - component: {fileID: 61612265307225340}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Collectable
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +51,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93cbb18b5b523c4aa620739bfdd5ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Part: 0
 --- !u!212 &212483490162027516
 SpriteRenderer:
   m_ObjectHideFlags: 1
