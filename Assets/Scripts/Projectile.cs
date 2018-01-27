@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-
     Rigidbody2D RB;
     float Angle;
     public float TimeAfterDestroy;
@@ -38,4 +37,5 @@ public class Projectile : MonoBehaviour
             //Debug.Log("I hit a player!");
         }
     }
+    
 }

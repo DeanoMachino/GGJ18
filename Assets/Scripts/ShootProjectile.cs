@@ -24,19 +24,15 @@ public class ShootProjectile : MonoBehaviour
             {
                 Shoot();
             }
-            else
-            {
-                Debug.Log("CoolDown!");
-            }
         }
     }
 
     void ChangeCoolDown()
     {
-        Debug.Log("StartCharge = " + StartCharge + "  CoolDown = " + CoolDown);
+        //Debug.Log("StartCharge = " + StartCharge + "  CoolDown = " + CoolDown);
         if (StartCharge >= 0)
         {
-            StartCharge = StartCharge - 0.1f;
+            StartCharge = StartCharge - 1f;
         }
         else
         {
@@ -45,7 +41,6 @@ public class ShootProjectile : MonoBehaviour
             }
             else
             {
-                //Set add 1 to cooldown
                 CoolDown = CoolDown + CoolDownRechargeSpeed;
             }
         }
