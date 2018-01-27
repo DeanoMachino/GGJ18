@@ -2,32 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : MonoBehaviour
+{
 
     Rigidbody2D RB;
-
     float Angle;
+    public float TimeAfterDestroy;
 
-	// Use this for initialization
-	void Start () {
+    void Start()
+    {
         RB = GetComponent<Rigidbody2D>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
+    }
+
+    void Update()
+    {
         SetRotation();
 
+        Destroy(gameObject, TimeAfterDestroy);
     }
 
     void SetRotation()
     {
-        //find Angel
-
-        //Angle = ;
+        //find Angle
+        Angle = Mathf.Atan2(RB.velocity.y, RB.velocity.x) * Mathf.Rad2Deg;
 
         //Set Rotation
+        transform.rotation = Quaternion.AngleAxis(Angle, Vector3.forward);
+    }
 
-        RB.rotation = Angle;
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Debug.Log("Hit = " + collision.gameObject.name);
+        if (collision.gameObject.tag == "Player")
+        {
+            //Debug.Log("I hit a player!");
+        }
     }
 }
