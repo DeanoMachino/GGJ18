@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour {
     private bool _isChargingAttack = false;
     private float _chargingProgress;
     private float _chargingSpeed = 3;
+    public int AvatarIndex = 0;
 
     #region Event Listeners
 

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public List<Player> players = new List<Player>();
     public static GameManager Instance;
     public static float GRAVITY = -25f;
+    public bool GameEnded = false;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
                 players[IndexKilled].Deaths++;
                 break;
         }
+
         Won(CheckIfWon());
     }
 
@@ -54,14 +56,19 @@ public class GameManager : MonoBehaviour
                 return play;
             }
         }
+        Debug.Log("No one Won!");
         return null;
     }
 
-    void Won(Player WhoWon)
+    void Won(Player P)
     {
-        if(WhoWon != null)
+        if(P != null)
         {
-            Debug.Log(WhoWon.Name + " Won!!");
+            //Stop Game
+            GameEnded = true;
+
+            //Open End Game UI and close all other UI
+            Debug.Log(P.Name + "Won");
         }
     }
 
@@ -100,10 +107,22 @@ public class Player
     public int Kills;
     public int Deaths;
 
+    public int AvatarIndex = 0;
+
     // is the player active/playing?
     public bool active;
 
     // Parts per-player
+    public int TotalAmountOfParts()
+    {
+        int TempAmount = 0;
+        bool[] GotParts = { P1, P2, P3, P4 };
+        foreach (bool B in GotParts)
+        {
+            TempAmount++;
+        }
+        return TempAmount;
+    }
     public bool P1;
     public bool P2;
     public bool P3;
@@ -115,4 +134,5 @@ public class Player
         player.transform.position = GameManager.SpawnLocations[playerindex].transform.position;
         PlayerReference = player;
     }
+    public int Rank = 0;
 }
