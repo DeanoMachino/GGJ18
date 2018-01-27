@@ -45,4 +45,5 @@ public class Projectile : MonoBehaviour
             //Debug.Log("I hit a player!");
         }
     }
+    
 }
