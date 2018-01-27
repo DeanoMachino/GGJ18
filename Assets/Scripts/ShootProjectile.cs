@@ -4,22 +4,54 @@ using UnityEngine;
 
 public class ShootProjectile : MonoBehaviour
 {
-    public float CoolDownTime, SpellCost;
-    float CoolDown;
+    public float CoolDownTime, SpellCost, CoolDownRechargeSpeed, DelayBeforeStartChargeCooldown;
+    float CoolDown, StartCharge;
     public GameObject Projectile;
     Vector3 SpawnLocation;
     Vector3 SpawnVelocity;
+
+    void Start()
+    {
+        CoolDown = CoolDownTime;
+        InvokeRepeating("ChangeCoolDown", 0f, 0.1f);
+    }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (CoolDown == CoolDownTime)
+            if (CoolDown > SpellCost)
             {
                 Shoot();
             }
+            else
+            {
+                Debug.Log("CoolDown!");
+            }
         }
     }
+
+    void ChangeCoolDown()
+    {
+        Debug.Log("StartCharge = " + StartCharge + "  CoolDown = " + CoolDown);
+        if (StartCharge >= 0)
+        {
+            StartCharge = StartCharge - 0.1f;
+        }
+        else
+        {
+            if (CoolDown >= CoolDownTime)
+            {
+            }
+            else
+            {
+                //Set add 1 to cooldown
+                CoolDown = CoolDown + CoolDownRechargeSpeed;
+            }
+        }
+
+    }
+
     void Shoot()
     {
         SetProjectileValues();
@@ -27,13 +59,16 @@ public class ShootProjectile : MonoBehaviour
         SpawnProjectile.transform.position = SpawnLocation;
         Rigidbody2D SpawnedRigidbody = SpawnProjectile.GetComponent<Rigidbody2D>();
         SpawnedRigidbody.velocity = SpawnVelocity * 40;
-        CoolDown = CoolDown + SpellCost;
+        CoolDown = CoolDown - SpellCost;
+        StartCharge = DelayBeforeStartChargeCooldown;
     }
+
     void SetProjectileValues()
     {
         var horiz = Input.GetAxis("Horizontal");
         var vert = Input.GetAxis("Vertical");
-        SpawnVelocity = new Vector3(horiz, vert, 0);
         SpawnLocation = this.transform.position;
+        SpawnVelocity = new Vector3(horiz, vert, 0);
     }
+
 }
