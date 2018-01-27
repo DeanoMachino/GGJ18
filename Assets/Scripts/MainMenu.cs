@@ -3,10 +3,9 @@ using UnityEditor.UI;
 
 public class MainMenu : MonoBehaviour {
 
-
-    public void Start()
+    public void onStartEvent()
     {
-        // TODO: Randomly pick a dog to display
+
     }
 
 	// Quits game when called
