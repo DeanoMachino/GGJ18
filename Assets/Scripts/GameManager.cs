@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public Player[] players;
+    public GameObject CharacterTesty;
+
+    public static GameObject[] SpawnLocations;
+
+    public List<Player> players = new List<Player>();
 
     public static GameManager Instance;
 
@@ -14,24 +18,31 @@ public class GameManager : MonoBehaviour {
         Instance = this;
     }
 
-    // Use this for initialization
-    private void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	private void Update () {
-		
-	}
-
-    void Players(int QuantPlayers)
+    public void Start()
     {
-        
+        SpawnLocations = GameObject.FindGameObjectsWithTag("Spawns");
+        SetUpPlayers(4);
+    }
+
+    void SetUpPlayers(int QuantPlayers)
+    {
+        for (int a = 0; a < QuantPlayers; a++)
+        {
+            Player PlayerToAdd = new Player();
+            PlayerToAdd.Name = "Player" + a + 1;
+            PlayerToAdd.playerindex = a;
+            players.Add(PlayerToAdd);
+            PlayerToAdd.Spawn(CharacterTesty);
+        }
     }
 }
+
 public class Player
 {
+    // player objects
     public GameObject PlayerReference;
+    public int playerindex;
+
     // Player name
     public string Name;
 
@@ -47,4 +58,10 @@ public class Player
     public bool P2;
     public bool P3;
     public bool P4;
+
+    public void Spawn(GameObject playerPreFab)
+    {
+        GameObject player = GameManager.Instantiate(playerPreFab) as GameObject;
+        player.transform.position = GameManager.SpawnLocations[playerindex].transform.position;
+    }
 }
