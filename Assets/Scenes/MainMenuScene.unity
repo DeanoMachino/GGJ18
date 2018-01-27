@@ -539,6 +539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1069833488}
   - component: {fileID: 1069833489}
+  - component: {fileID: 1069833490}
   m_Layer: 5
   m_Name: MenuSecion
   m_TagString: Untagged
@@ -564,8 +565,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 280}
+  m_AnchoredPosition: {x: 0, y: -60}
+  m_SizeDelta: {x: 698, y: 280}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1069833489
 MonoBehaviour:
@@ -578,6 +579,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df637ee952be30448f2b33a60acba0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1069833490
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1069833487}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 94f7e482be355bf4d9aa469920a18ce7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1168154883
 GameObject:
   m_ObjectHideFlags: 0
