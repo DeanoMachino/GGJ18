@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-
     Parts Part;
     SpriteRenderer SR;
 
