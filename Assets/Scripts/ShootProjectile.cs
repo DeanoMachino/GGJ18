@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShootProjectile : MonoBehaviour
 {
-    public float CoolDownTime, SpellCost, CoolDownRechargeSpeed, DelayBeforeStartChargeCooldown;
+    public float Cool_down_time, SpellCost, CoolDownRechargeSpeed, DelayBeforeStartChargeCooldown;
     float CoolDown, StartCharge;
     public GameObject Projectile;
     Vector3 SpawnLocation;
@@ -12,7 +12,7 @@ public class ShootProjectile : MonoBehaviour
 
     void Start()
     {
-        CoolDown = CoolDownTime;
+        CoolDown = Cool_down_time;
         InvokeRepeating("ChangeCoolDown", 0f, 0.1f);
     }
 
@@ -36,7 +36,7 @@ public class ShootProjectile : MonoBehaviour
         }
         else
         {
-            if (CoolDown >= CoolDownTime)
+            if (CoolDown >= Cool_down_time)
             {
             }
             else

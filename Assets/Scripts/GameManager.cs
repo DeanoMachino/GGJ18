@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    public Players[] players;
+
     public static GameManager Instance;
 
     public static float GRAVITY = -25f;
@@ -21,4 +23,15 @@ public class GameManager : MonoBehaviour {
 	private void Update () {
 		
 	}
+}
+public class Players
+{
+    public GameObject PlayerReference;
+    public string Name;
+    public int Kills;
+    public int Deaths;
+    public bool P1;
+    public bool P2;
+    public bool P3;
+    public bool P4;
 }
