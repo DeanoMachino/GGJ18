@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class ShootProjectile : MonoBehaviour
 {
-    public float CoolDown;
+    public float CoolDownTime, SpellCost;
+    float CoolDown;
     public GameObject Projectile;
     Vector3 SpawnLocation;
     Vector3 SpawnVelocity;
 
     void Update()
     {
-        
-        
-
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            if (CoolDown == CoolDownTime)
+            {
+                Shoot();
+            }
         }
     }
     void Shoot()
@@ -26,6 +27,7 @@ public class ShootProjectile : MonoBehaviour
         SpawnProjectile.transform.position = SpawnLocation;
         Rigidbody2D SpawnedRigidbody = SpawnProjectile.GetComponent<Rigidbody2D>();
         SpawnedRigidbody.velocity = SpawnVelocity * 40;
+        CoolDown = CoolDown + SpellCost;
     }
     void SetProjectileValues()
     {
