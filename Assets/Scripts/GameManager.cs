@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     public GameObject CharacterTesty;
 
@@ -14,7 +15,10 @@ public class GameManager : MonoBehaviour {
 
     public static float GRAVITY = -25f;
 
-    private void Awake() {
+    private List<PlayerController> _players;
+
+    private void Awake()
+    {
         Instance = this;
     }
 
@@ -22,6 +26,12 @@ public class GameManager : MonoBehaviour {
     {
         SpawnLocations = GameObject.FindGameObjectsWithTag("Spawns");
         SetUpPlayers(4);
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+
     }
 
     void SetUpPlayers(int QuantPlayers)

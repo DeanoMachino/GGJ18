@@ -1,32 +1,40 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    Rigidbody2D RB;
-    float Angle;
+    private int _playerID;
+
+    Rigidbody2D Rigidbody;
     public float TimeAfterDestroy;
 
     void Start()
     {
-        RB = GetComponent<Rigidbody2D>();
+        Rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    public void Initialise(int playerID, Vector2 initialDirection, float velocity) {
+        if (Rigidbody == null) {
+            Rigidbody = GetComponent<Rigidbody2D>();
+        }
+        Rigidbody.AddForce(initialDirection * velocity, ForceMode2D.Impulse);
     }
 
     void Update()
     {
-        SetRotation();
+        UpdateRotation();
 
         Destroy(gameObject, TimeAfterDestroy);
     }
 
-    void SetRotation()
+    void UpdateRotation()
     {
         //find Angle
-        Angle = Mathf.Atan2(RB.velocity.y, RB.velocity.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(Rigidbody.velocity.y, Rigidbody.velocity.x) * Mathf.Rad2Deg;
 
         //Set Rotation
-        transform.rotation = Quaternion.AngleAxis(Angle, Vector3.forward);
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
