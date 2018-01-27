@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public Players[] players;
+    public Player[] players;
 
     public static GameManager Instance;
 
