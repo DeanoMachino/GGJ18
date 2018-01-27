@@ -39,6 +39,25 @@ public class PlayerController : MonoBehaviour {
 
     void onTriggerEnterEvent(Collider2D col) {
         Debug.Log("onTriggerEnterEvent: " + col.gameObject.name);
+        if (col.gameObject.tag == "Collectable")
+        {
+            switch (col.gameObject.GetComponent<Collectable>().Part)
+            {
+                case Parts.RadioP1:
+                    GameManager.Instance.UpdateScore(Score.GotPart1, _playerID, 0);
+                    break;
+                case Parts.RadioP2:
+                    GameManager.Instance.UpdateScore(Score.GotPart2, _playerID, 0);
+                    break;
+                case Parts.RadioP3:
+                    GameManager.Instance.UpdateScore(Score.GotPart3, _playerID, 0);
+                    break;
+                case Parts.RadioP4:
+                    GameManager.Instance.UpdateScore(Score.GotPart4, _playerID, 0);
+                    break;
+            }
+            Destroy(col.gameObject);
+        }
     }
 
 
@@ -188,4 +207,5 @@ public class PlayerController : MonoBehaviour {
         Jump,
         Attack
     }
+
 }
