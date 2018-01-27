@@ -320,7 +320,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4757002049282820, guid: 2e1d69518df5e3542b86c0b6729d6e7f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 14.98
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4757002049282820, guid: 2e1d69518df5e3542b86c0b6729d6e7f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -344,6 +344,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4757002049282820, guid: 2e1d69518df5e3542b86c0b6729d6e7f, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114976561852596296, guid: 2e1d69518df5e3542b86c0b6729d6e7f,
+        type: 2}
+      propertyPath: totalHorizontalRays
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114976561852596296, guid: 2e1d69518df5e3542b86c0b6729d6e7f,
+        type: 2}
+      propertyPath: totalVerticalRays
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 50660213769224400, guid: 2e1d69518df5e3542b86c0b6729d6e7f,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50660213769224400, guid: 2e1d69518df5e3542b86c0b6729d6e7f,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61389564125353634, guid: 2e1d69518df5e3542b86c0b6729d6e7f,
+        type: 2}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

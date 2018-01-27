@@ -186,7 +186,7 @@ public class PlayerController : MonoBehaviour {
         bool jumpInput = Input.GetButtonDown(GetControlString(PlayerControls.Jump));
 
         // Jump if the player is on the ground.
-        if (_controller.IsGrounded && jumpInput) {
+        if ((_controller.IsGrounded || _velocity.y == 0) && jumpInput) {
             _velocity.y = Mathf.Sqrt(2f * jumpHeight * -GameManager.GRAVITY);
         }
 
