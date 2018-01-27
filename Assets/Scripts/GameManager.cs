@@ -32,9 +32,17 @@ public class GameManager : MonoBehaviour {
 public class Player
 {
     public GameObject PlayerReference;
+    // Player name
     public string Name;
+
+    // Number of kills and deaths
     public int Kills;
     public int Deaths;
+
+    // is the player active/playing?
+    public bool active;
+
+    // Parts per-player
     public bool P1;
     public bool P2;
     public bool P3;
