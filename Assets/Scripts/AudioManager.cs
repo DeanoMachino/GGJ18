@@ -8,8 +8,6 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager Instance;
 
-
-
     public AudioSource sfxSource;
     public AudioSource musicSource;
 
@@ -17,6 +15,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip chargingAttackSound;
     public AudioClip attackSound;
 
+    public AudioClip gameMusic;
+    public AudioClip mainMenuMusic;
+
+    //To create singleton class
     private void Awake()
     {
         Instance = this;
@@ -34,23 +36,48 @@ public class AudioManager : MonoBehaviour
 
     }
 
-
-    void playAudioClip(AvailableAudioClips AAC)
-    {
-
-        if (AAC.Equals(AvailableAudioClips.attack))
+    public void playBackgroundMusic(AvailableMusicClips AMC) {
+        switch (AMC)
         {
-            sfxSource.PlayOneShot(jumpSound);
+            case AvailableMusicClips.ingameMusic:
+                musicSource.PlayOneShot(gameMusic);
+                break;
+            case AvailableMusicClips.mainMenuMusic:
+                musicSource.PlayOneShot(mainMenuMusic);
+                break;
+            default:
+                break;
         }
-
 
     }
 
-    enum AvailableAudioClips
+    public void playAudioClip(AvailableAudioClips AAC)
+    {
+        switch (AAC) {
+            case AvailableAudioClips.attack:
+                sfxSource.PlayOneShot(jumpSound);
+                break;
+            case AvailableAudioClips.jump:
+                sfxSource.PlayOneShot(chargingAttackSound);
+                break;
+            case AvailableAudioClips.chargeAttack:
+                sfxSource.PlayOneShot(attackSound);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public enum AvailableAudioClips
     {
         jump,
         chargeAttack,
         attack
     }
 
+    public enum AvailableMusicClips
+    {
+        ingameMusic,
+        mainMenuMusic
+    }
 }

@@ -7,6 +7,11 @@ public class UI : MonoBehaviour {
     public GameObject player_03;
     public GameObject player_04;
 
+    public Sprite radio_active_1;
+    public Sprite radio_active_2;
+    public Sprite radio_active_3;
+    public Sprite radio_active_4;
+
     private string placeholder_player_parts = "Player-Parts";
 
     // Use this for initialization
@@ -46,15 +51,26 @@ public class UI : MonoBehaviour {
 
     public void activateRadioByIndex(GameObject[] radios, int index)
     {
-        // Fix off by one
-        index = index + 1;
         foreach (GameObject radio in radios)
         {
             if (radio.name == "Icon-Radio-0" + index.ToString())
             {
-                string path_to_sprite = "Sprites/Item-RadioComponant/radiopart-" + index.ToString();
-                Sprite image = Resources.Load(path_to_sprite) as Sprite;
-                radio.GetComponent<SpriteRenderer>().sprite = image;
+                if (index == 1)
+                {
+                    radio.GetComponent<Image>().sprite = this.radio_active_1;
+                }
+                if (index == 2)
+                {
+                    radio.GetComponent<Image>().sprite = this.radio_active_2;
+                }
+                if (index == 3)
+                {
+                    radio.GetComponent<Image>().sprite = this.radio_active_3;
+                }
+                if (index == 4)
+                {
+                    radio.GetComponent<Image>().sprite = this.radio_active_4;
+                }
             }
         }
     }

@@ -483,13 +483,31 @@ GameObject:
   - component: {fileID: 114091913727768862}
   - component: {fileID: 114116924740393486}
   - component: {fileID: 114012303355703686}
+  - component: {fileID: 95478884403315868}
   m_Layer: 5
   m_Name: GameOverlay
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &95478884403315868
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1978323861471232}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114012303355703686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -505,6 +523,10 @@ MonoBehaviour:
   player_02: {fileID: 1405717354148788}
   player_03: {fileID: 1587114516114546}
   player_04: {fileID: 1099079394122546}
+  radio_active_1: {fileID: 21300000, guid: 420639838386dd945aaff3f8bef019c0, type: 3}
+  radio_active_2: {fileID: 21300000, guid: 370839b656976b248b6ebae1e8bd2441, type: 3}
+  radio_active_3: {fileID: 21300000, guid: 4c4507396c225554ebbf9343041aef5c, type: 3}
+  radio_active_4: {fileID: 21300000, guid: dd19d1e86a1ec3b459e17d683401d79e, type: 3}
 --- !u!114 &114091913727768862
 MonoBehaviour:
   m_ObjectHideFlags: 1

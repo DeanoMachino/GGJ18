@@ -87,8 +87,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void SetUpVisuals() {
-        GetComponent<SpriteRenderer>().sprite = CharacterSpriteManager.Instance.characterAnimations[_playerID].idleSprite;
-        _animator.runtimeAnimatorController = CharacterSpriteManager.Instance.characterAnimations[_playerID].animationController;
+        _animator.runtimeAnimatorController = CharacterSpriteManager.Instance.characterAnimators[_playerID];
     }
 
     private void Update() {
@@ -198,6 +197,8 @@ public class PlayerController : MonoBehaviour {
         // Jump if the player is on the ground.
         if ((_controller.IsGrounded || _velocity.y == 0) && jumpInput) {
             _velocity.y = Mathf.Sqrt(2f * jumpHeight * -GameManager.GRAVITY);
+
+            AudioManager.Instance.playAudioClip(AudioManager.AvailableAudioClips.jump);
         }
 
         return jumpInput;

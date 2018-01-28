@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public static float GRAVITY = -25f;
     public bool GameEnded = false;
     public GameObject playerPrefab;
+    public GameObject EndGameUI;
+    public string Winner;
 
     private void Awake()
     {
@@ -69,7 +71,17 @@ public class GameManager : MonoBehaviour
             GameEnded = true;
 
             //Open End Game UI and close all other UI
-            Debug.Log(P.Name + "Won");
+            GameObject[] UIs = GameObject.FindGameObjectsWithTag("UI");
+
+            foreach( GameObject GO in UIs)
+            {
+                Debug.Log(GO);
+                Destroy(GO);
+            }
+
+            GameObject SpawnEndGameUI = Instantiate(EndGameUI, transform.position, transform.rotation) as GameObject;
+            Debug.Log(SpawnEndGameUI);
+            Winner = P.Name;
         }
     }
 
@@ -82,6 +94,10 @@ public class GameManager : MonoBehaviour
             PlayerToAdd.Name = "Player" + a + 1;
             players.Add(PlayerToAdd);
         }
+    }
+    public void RestartGame()
+    {
+        Application.LoadLevel(Application.loadedLevel);
     }
 }
 
