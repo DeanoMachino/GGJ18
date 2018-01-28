@@ -505,6 +505,10 @@ MonoBehaviour:
   player_02: {fileID: 1405717354148788}
   player_03: {fileID: 1587114516114546}
   player_04: {fileID: 1099079394122546}
+  radio_active_1: {fileID: 21300000, guid: 420639838386dd945aaff3f8bef019c0, type: 3}
+  radio_active_2: {fileID: 21300000, guid: 370839b656976b248b6ebae1e8bd2441, type: 3}
+  radio_active_3: {fileID: 21300000, guid: 4c4507396c225554ebbf9343041aef5c, type: 3}
+  radio_active_4: {fileID: 21300000, guid: dd19d1e86a1ec3b459e17d683401d79e, type: 3}
 --- !u!114 &114091913727768862
 MonoBehaviour:
   m_ObjectHideFlags: 1
