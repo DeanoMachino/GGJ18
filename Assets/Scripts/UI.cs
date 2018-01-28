@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class UI : MonoBehaviour {
@@ -43,13 +43,13 @@ public class UI : MonoBehaviour {
 
     public void deactivatePlayer(Player player)
     {
-        Component comp = this.getPlayerComp(player.playerindex);
+        Component comp = this.getPlayerComp(player.playerID);
         // TODO GM: Complete if needed
     }
 
     public void updatePlayerParts(Player player)
     {
-        GameObject[] player_parts = this.getPlayerComponants(player.playerindex);
+        GameObject[] player_parts = this.getPlayerComponants(player.playerID);
 
         // Foreach image object
         foreach (GameObject comp in player_parts)

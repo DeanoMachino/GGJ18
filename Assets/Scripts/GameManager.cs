@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameObject[] SpawnLocations;
+    public GameObject[] SpawnLocations;
     public List<Player> players = new List<Player>();
     public static GameManager Instance;
     public static float GRAVITY = -25f;
     public bool GameEnded = false;
+    public GameObject playerPrefab;
 
     private void Awake()
     {
@@ -17,7 +18,6 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-        SpawnLocations = GameObject.FindGameObjectsWithTag("Spawns");
         SetUpPlayers(4);
     }
 
@@ -77,9 +77,8 @@ public class GameManager : MonoBehaviour
     {
         for (int a = 0; a < QuantPlayers; a++)
         {
-            Player PlayerToAdd = new Player();
+            Player PlayerToAdd = new Player(a);
             PlayerToAdd.Name = "Player" + a + 1;
-            PlayerToAdd.playerindex = a;
             players.Add(PlayerToAdd);
         }
     }
@@ -98,7 +97,7 @@ public class Player
 {
     // player objects
     public GameObject PlayerReference;
-    public int playerindex;
+    public int playerID;
 
     // Player name
     public string Name;
@@ -128,10 +127,16 @@ public class Player
     public bool P3;
     public bool P4;
 
-    public void Spawn(GameObject playerPreFab)
+    public Player(int playerID) {
+        this.playerID = playerID;
+        Spawn();
+    }
+
+    public void Spawn()
     {
-        GameObject player = GameManager.Instantiate(playerPreFab) as GameObject;
-        player.transform.position = GameManager.SpawnLocations[playerindex].transform.position;
+        GameObject player = GameManager.Instantiate(GameManager.Instance.playerPrefab) as GameObject;
+        player.transform.position = GameManager.Instance.SpawnLocations[playerID].transform.position;
+        player.GetComponent<PlayerController>().Initialise(playerID);
         PlayerReference = player;
     }
     public int Rank = 0;
