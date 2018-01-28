@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour {
             horizontal = 1;
         }
 
-        return new Vector2(horizontal, vertical).normalized;
+        return new Vector2(horizontal, -vertical).normalized;
     }
 
     private void FixedUpdate() {
@@ -191,8 +191,6 @@ public class PlayerController : MonoBehaviour {
         // Jump if the player is on the ground.
         if ((_controller.IsGrounded || _velocity.y == 0) && jumpInput) {
             _velocity.y = Mathf.Sqrt(2f * jumpHeight * -GameManager.GRAVITY);
-
-            //AudioManager.Instance.AudioClip.jum
         }
 
         return jumpInput;
@@ -213,15 +211,15 @@ public class PlayerController : MonoBehaviour {
     private string GetControlString(PlayerControls control) {
         switch (control) {
             case PlayerControls.Movement:
-                return string.Format("Player{0}Movement", _playerID);
+                return string.Format("Player{0}Movement", _playerID + 1);
             case PlayerControls.HorizontalAim:
-                return string.Format("Player{0}AimHorizontal", _playerID);
+                return string.Format("Player{0}AimHorizontal", _playerID + 1);
             case PlayerControls.VerticalAim:
-                return string.Format("Player{0}AimVertical", _playerID);
+                return string.Format("Player{0}AimVertical", _playerID + 1);
             case PlayerControls.Jump:
-                return string.Format("Player{0}Jump", _playerID);
+                return string.Format("Player{0}Jump", _playerID + 1);
             case PlayerControls.Attack:
-                return string.Format("Player{0}Attack", _playerID);
+                return string.Format("Player{0}Attack", _playerID + 1);
         }
         return "";
     }

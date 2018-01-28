@@ -35,10 +35,10 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    void playAudioClip(string t)
+    void playAudioClip(AvailableAudioClips AAC)
     {
 
-        if (t.Equals(AvailableAudioClips.attack))
+        if (AAC.Equals(AvailableAudioClips.attack))
         {
             sfxSource.PlayOneShot(jumpSound);
         }

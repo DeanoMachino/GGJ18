@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class UI : MonoBehaviour {
@@ -7,9 +7,7 @@ public class UI : MonoBehaviour {
     public GameObject player_03;
     public GameObject player_04;
 
-
     private string placeholder_player_parts = "Player-Parts";
-
 
     // Use this for initialization
     void Start () {
@@ -43,51 +41,45 @@ public class UI : MonoBehaviour {
 
     public void deactivatePlayer(Player player)
     {
-        Component comp = this.getPlayerComp(player.playerindex);
         // TODO GM: Complete if needed
+    }
+
+    public void activateRadioByIndex(GameObject[] radios, int index)
+    {
+        // Fix off by one
+        index = index + 1;
+        foreach (GameObject radio in radios)
+        {
+            if (radio.name == "Icon-Radio-0" + index.ToString())
+            {
+                string path_to_sprite = "Sprites/Item-RadioComponant/radiopart-" + index.ToString();
+                Sprite image = Resources.Load(path_to_sprite) as Sprite;
+                radio.GetComponent<SpriteRenderer>().sprite = image;
+            }
+        }
     }
 
     public void updatePlayerParts(Player player)
     {
-        GameObject[] player_parts = this.getPlayerComponants(player.playerindex);
+        // TODO: Refactor
+        int index = player.playerID + 1;
+        GameObject[] radios = GameObject.FindGameObjectsWithTag("Player-0" + index.ToString());
 
-        // Foreach image object
-        foreach (GameObject comp in player_parts)
-        {   
-            if (comp.name.StartsWith("Icon-Radio-"))
-            {
-                Debug.Log(">>> " + comp.name);
-            }
-        }
-        
-    }
-
-    public Component getPlayerComp(int player_id)
-    {
-        Component comp = new Component();
-        // TODO GM: refactor
-        if (player_id == 1)
+        if (player.P1)
         {
-            comp = player_01.GetComponent(placeholder_player_parts);
+            this.activateRadioByIndex(radios, 1);
         }
-        else if (player_id == 2)
+        if (player.P2)
         {
-            comp = player_02.GetComponent(placeholder_player_parts);
+            this.activateRadioByIndex(radios, 2);
         }
-        else if (player_id == 3)
+        if (player.P3)
         {
-            comp = player_03.GetComponent(placeholder_player_parts);
+            this.activateRadioByIndex(radios, 3);
         }
-        else if (player_id == 4)
+        if (player.P4)
         {
-            comp = player_04.GetComponent(placeholder_player_parts);
+            this.activateRadioByIndex(radios, 4);
         }
-        return comp;
-    }
-
-    public GameObject[] getPlayerComponants(int player_id)
-    {
-        Component comp = this.getPlayerComp(player_id);
-        return comp.GetComponents<GameObject>();
     }
 }

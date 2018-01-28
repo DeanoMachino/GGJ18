@@ -7,6 +7,7 @@ TagManager:
   - Projectile
   - Spawns
   - Collectable
+  - Environment
   - Player-01
   - Player-02
   - Player-03
