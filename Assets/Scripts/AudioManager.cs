@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class AudioManager : MonoBehaviour {
+public class AudioManager : MonoBehaviour
+{
 
     public static AudioManager Instance;
 
-    
+
 
     public AudioSource sfxSource;
     public AudioSource musicSource;
@@ -22,24 +23,34 @@ public class AudioManager : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-
-    void playAudioClip() {
+    void Start()
+    {
 
     }
 
-    public enum AudioClip
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+
+    void playAudioClip(string t)
+    {
+
+        if (t.Equals(AvailableAudioClips.attack))
+        {
+            sfxSource.PlayOneShot(jumpSound);
+        }
+
+
+    }
+
+    enum AvailableAudioClips
     {
         jump,
         chargeAttack,
         attack
     }
+
 }
