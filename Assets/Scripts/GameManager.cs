@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
-    public GameObject CharacterTesty;
     public static GameObject[] SpawnLocations;
     public List<Player> players = new List<Player>();
     public static GameManager Instance;
     public static float GRAVITY = -25f;
-    private List<PlayerController> _players;
     public bool GameEnded = false;
 
     private void Awake()
@@ -84,7 +81,6 @@ public class GameManager : MonoBehaviour
             PlayerToAdd.Name = "Player" + a + 1;
             PlayerToAdd.playerindex = a;
             players.Add(PlayerToAdd);
-            PlayerToAdd.Spawn(CharacterTesty);
         }
     }
 }
