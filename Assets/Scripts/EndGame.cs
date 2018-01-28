@@ -3,9 +3,13 @@
 public class EndGame : MonoBehaviour {
 
     public Sprite player_1;
+    public Sprite player_1_lose;
     public Sprite player_2;
+    public Sprite player_2_lose;
     public Sprite player_3;
+    public Sprite player_3_lose;
     public Sprite player_4;
+    public Sprite player_4_lose;
 
     public GameObject replay_button;
 
@@ -20,12 +24,14 @@ public class EndGame : MonoBehaviour {
             foreach (Player player in gm.players)
             {
                 Sprite sprite;
+                bool is_winner = false;
                 
                 // Winner
                 if (gm.Winner == player.Name)
                 {
                     GameObject winner = this.transform.Find("Player-Winner").gameObject;
                     sprite = winner.GetComponent<Sprite>();
+                    is_winner = true;
                 } else // loosers
                 {
                     GameObject looser = this.transform.Find("Player-Looser_" + looser_index.ToString()).gameObject;
@@ -33,28 +39,31 @@ public class EndGame : MonoBehaviour {
                     looser_index += 1;
                 }
 
-                sprite = this.getSpriteByName(player);
+                sprite = this.getSpriteByName(player, is_winner);
             }
 
         }
         
 	}
 
-    public Sprite getSpriteByName(Player player)
+    public Sprite getSpriteByName(Player player, bool win)
     {
         if (player.playerID == 1)
         {
-            return player_1;
+            if (win) { return player_1; } else { return player_1_lose; }
         }
         if (player.playerID == 2)
         {
-            return player_2;
+            if (win) { return player_2; } else { return player_2_lose; }
         }
         if (player.playerID == 3)
         {
-            return player_3;
+            if (win) { return player_3; } else { return player_3_lose; }
         }
-        return player_4;
+        else
+        {
+            if (win) { return player_4; } else { return player_4_lose; }
+        }
     }
 	
 

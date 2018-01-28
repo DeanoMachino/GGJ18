@@ -470,7 +470,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f14bbc3a05ad4764abb6181d3614ca76, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 802199837e5d7164fa8b1264b504ab1f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -785,7 +785,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b490ddb9d82f452438388dbb907b960c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55d4027635d8145439d82147951a864f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -878,7 +878,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 44e0742112bfa0947bc1e3901fad3ca2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78109b6b88d49604680df07d95aa9925, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -897,10 +897,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131342c4baefce34ba96a18cda85fc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_1: {fileID: 21300000, guid: 44e0742112bfa0947bc1e3901fad3ca2, type: 3}
-  player_2: {fileID: 21300000, guid: f14bbc3a05ad4764abb6181d3614ca76, type: 3}
-  player_3: {fileID: 21300000, guid: b490ddb9d82f452438388dbb907b960c, type: 3}
-  player_4: {fileID: 21300000, guid: 4cc98a22d4477cf4fb93e8a30d1666c5, type: 3}
+  player_1: {fileID: 21300000, guid: 5600cce5b3a86ff4b88e3ec9643c46a9, type: 3}
+  player_1_lose: {fileID: 21300000, guid: b4373fa1d20e9414084e842f8d446f94, type: 3}
+  player_2: {fileID: 21300000, guid: e38956175c3615c4b9081732da6ea5d6, type: 3}
+  player_2_lose: {fileID: 21300000, guid: 55d4027635d8145439d82147951a864f, type: 3}
+  player_3: {fileID: 21300000, guid: 7522421f82e7b4541ae7daf234e13049, type: 3}
+  player_3_lose: {fileID: 21300000, guid: 802199837e5d7164fa8b1264b504ab1f, type: 3}
+  player_4: {fileID: 21300000, guid: 78109b6b88d49604680df07d95aa9925, type: 3}
+  player_4_lose: {fileID: 21300000, guid: 4068977c6532ded4fbe1460c603c1023, type: 3}
   replay_button: {fileID: 1232219881223406}
 --- !u!114 &114893725558433704
 MonoBehaviour:
@@ -954,7 +958,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4cc98a22d4477cf4fb93e8a30d1666c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4373fa1d20e9414084e842f8d446f94, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
