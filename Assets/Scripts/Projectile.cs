@@ -17,6 +17,7 @@ public class Projectile : MonoBehaviour
         if (Rigidbody == null) {
             Rigidbody = GetComponent<Rigidbody2D>();
         }
+        _playerID = playerID;
         Rigidbody.AddForce(initialDirection * velocity, ForceMode2D.Impulse);
         StartCoroutine(DestroyProjectile(lifetime));
     }

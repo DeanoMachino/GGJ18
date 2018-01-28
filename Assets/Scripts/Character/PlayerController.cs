@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour {
         var horizontal = Input.GetAxis(GetControlString(PlayerControls.HorizontalAim));
         var vertical = Input.GetAxis(GetControlString(PlayerControls.VerticalAim));
 
-        if (horizontal == 0 && vertical == 0) {
+        if (horizontal > -0.2f && horizontal < 0.2f && vertical > -0.2f && vertical < 0.2f) {
             horizontal = IsFacingLeft() ? -1 : 1;
         }
 
@@ -207,9 +207,9 @@ public class PlayerController : MonoBehaviour {
             if (jumping) {
                 //_animator.Play(Animator.StringToHash("Jump"));
             } else if (moving) {
-                //_animator.Play(Animator.StringToHash("Run");
+                _animator.Play(Animator.StringToHash("Run"));
             } else {
-                //_animator.Play(Animator.StringToHash("Idle");
+                _animator.Play(Animator.StringToHash("Idle"));
             }
         }
     }
@@ -241,5 +241,4 @@ public class PlayerController : MonoBehaviour {
     private bool IsFacingLeft() {
         return transform.localScale.x < 0;
     }
-
 }
