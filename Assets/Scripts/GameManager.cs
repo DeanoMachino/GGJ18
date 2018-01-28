@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool GameEnded = false;
     public GameObject playerPrefab;
     public GameObject EndGameUI;
+    public string Winner;
 
     private void Awake()
     {
@@ -79,7 +80,7 @@ public class GameManager : MonoBehaviour
 
             GameObject SpawnEndGameUI = Instantiate(EndGameUI, transform.position, transform.rotation) as GameObject;
             Debug.Log(SpawnEndGameUI);
-            Debug.Log(P.Name + " Won");
+            Winner = P.Name;
         }
     }
 
@@ -92,6 +93,10 @@ public class GameManager : MonoBehaviour
             PlayerToAdd.Name = "Player" + a + 1;
             players.Add(PlayerToAdd);
         }
+    }
+    public void RestartGame()
+    {
+        Application.LoadLevel(Application.loadedLevel);
     }
 }
 
