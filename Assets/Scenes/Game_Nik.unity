@@ -1504,6 +1504,29 @@ Prefab:
       propertyPath: m_TagString
       value: Environment
       objectReference: {fileID: 0}
+    - target: {fileID: 4750026702452928, guid: cbdd2ea3c96e91a4b8bad6eb3b310f4f, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750026702452928, guid: cbdd2ea3c96e91a4b8bad6eb3b310f4f, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 212453486185693566, guid: cbdd2ea3c96e91a4b8bad6eb3b310f4f,
+        type: 2}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212453486185693566, guid: cbdd2ea3c96e91a4b8bad6eb3b310f4f,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 212453486185693566, guid: cbdd2ea3c96e91a4b8bad6eb3b310f4f,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 36
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbdd2ea3c96e91a4b8bad6eb3b310f4f, type: 2}
   m_IsPrefabParent: 0
