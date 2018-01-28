@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor.UI;
+using UnityEditor.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class MainMenu : MonoBehaviour {
     public void onPlayEvent()
     {
         Debug.Log("Starting game...");
+        Application.LoadLevel("Game");
     }
 
 	/// <summary>
