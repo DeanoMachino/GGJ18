@@ -57,19 +57,19 @@ public class UI : MonoBehaviour {
             {
                 if (index == 1)
                 {
-                    radio.GetComponent<SpriteRenderer>().sprite = this.radio_active_1;
+                    radio.GetComponent<Image>().sprite = this.radio_active_1;
                 }
                 if (index == 2)
                 {
-                    radio.GetComponent<SpriteRenderer>().sprite = this.radio_active_2;
+                    radio.GetComponent<Image>().sprite = this.radio_active_2;
                 }
                 if (index == 3)
                 {
-                    radio.GetComponent<SpriteRenderer>().sprite = this.radio_active_3;
+                    radio.GetComponent<Image>().sprite = this.radio_active_3;
                 }
                 if (index == 4)
                 {
-                    radio.GetComponent<SpriteRenderer>().sprite = this.radio_active_4;
+                    radio.GetComponent<Image>().sprite = this.radio_active_4;
                 }
             }
         }
