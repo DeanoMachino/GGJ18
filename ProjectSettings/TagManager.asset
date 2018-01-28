@@ -12,6 +12,7 @@ TagManager:
   - Player-02
   - Player-03
   - Player-04
+  - UI
   layers:
   - Default
   - TransparentFX

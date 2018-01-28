@@ -83,6 +83,12 @@ public class PlayerController : MonoBehaviour {
 
     public void Initialise(int id) {
         _playerID = id;
+
+        SetUpVisuals();
+    }
+
+    private void SetUpVisuals() {
+        _animator.runtimeAnimatorController = CharacterSpriteManager.Instance.characterAnimators[_playerID];
     }
 
     private void Update() {
@@ -203,9 +209,9 @@ public class PlayerController : MonoBehaviour {
             if (jumping) {
                 //_animator.Play(Animator.StringToHash("Jump"));
             } else if (moving) {
-                //_animator.Play(Animator.StringToHash("Run");
+                _animator.Play(Animator.StringToHash("Run"));
             } else {
-                //_animator.Play(Animator.StringToHash("Idle");
+                _animator.Play(Animator.StringToHash("Idle"));
             }
         }
     }

@@ -1,33 +1,25 @@
 fileFormatVersion: 2
-guid: 80357944c6a6b0d42b36fcd95e76a17d
-timeCreated: 1517076640
+guid: 85213521f2dbfc549a0a35f2ea602e87
+timeCreated: 1517143427
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet_0
-    21300002: dog_01_idle
-    21300004: dog_02_idle
-    21300006: dog_03_idle
-    21300008: dog_04_idle
-    21300010: spritesheet_5
-    21300012: spritesheet_6
-    21300014: spritesheet_7
-    21300016: spritesheet_8
-    21300018: spritesheet_9
-    21300020: spritesheet_10
-    21300022: spritesheet_11
-    21300024: spritesheet_12
-    21300026: spritesheet_13
-    21300028: spritesheet_14
-    21300030: spritesheet_15
-    21300032: spritesheet_16
-    21300034: spritesheet_17
-    21300036: spritesheet_18
-    21300038: spritesheet_19
-    21300040: spritesheet_20
-    21300042: spritesheet_21
-    21300044: spritesheet_22
-    21300046: spritesheet_23
+    21300000: dog1-idle
+    21300002: dog1-run1
+    21300004: dog1-run2
+    21300006: dog1-run3
+    21300008: dog2-idle
+    21300010: dog2-run1
+    21300012: dog2-run2
+    21300014: dog2-run3
+    21300016: dog3-idle
+    21300018: dog3-run1
+    21300020: dog3-run2
+    21300022: dog3-run3
+    21300024: dog4-idle
+    21300026: dog4-run1
+    21300028: dog4-run2
+    21300030: dog4-run3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -124,337 +116,225 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet_0
+      name: dog1-idle
       rect:
         serializedVersion: 2
         x: 0
-        y: 981
-        width: 330
-        height: 360
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: dog_01_idle
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 1011
-        width: 330
+        y: 1031
+        width: 340
         height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dog_02_idle
+      name: dog1-run1
       rect:
         serializedVersion: 2
-        x: 670
-        y: 1011
-        width: 330
+        x: 342
+        y: 1031
+        width: 350
         height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dog_03_idle
+      name: dog1-run2
       rect:
         serializedVersion: 2
-        x: 1022
-        y: 1011
-        width: 330
+        x: 694
+        y: 1031
+        width: 340
         height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dog_04_idle
+      name: dog1-run3
       rect:
         serializedVersion: 2
-        x: 1356
-        y: 1010
-        width: 330
+        x: 1036
+        y: 1031
+        width: 350
         height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet_5
+      name: dog2-idle
       rect:
         serializedVersion: 2
         x: 0
-        y: 628
-        width: 330
+        y: 696
+        width: 340
         height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet_6
+      name: dog2-run1
       rect:
         serializedVersion: 2
-        x: 340
-        y: 628
-        width: 330
-        height: 350
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 683
-        y: 628
-        width: 330
+        x: 342
+        y: 696
+        width: 350
         height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet_8
+      name: dog2-run2
       rect:
         serializedVersion: 2
-        x: 1019
-        y: 618
-        width: 330
-        height: 350
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spritesheet_9
-      rect:
-        serializedVersion: 2
-        x: 1356
-        y: 601
-        width: 330
+        x: 694
+        y: 696
+        width: 340
         height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet_10
+      name: dog2-run3
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 696
+        width: 350
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dog3-idle
       rect:
         serializedVersion: 2
         x: 0
-        y: 263
-        width: 330
-        height: 350
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spritesheet_11
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 263
-        width: 330
+        y: 361
+        width: 340
         height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet_12
+      name: dog3-run1
       rect:
         serializedVersion: 2
-        x: 686
-        y: 263
-        width: 330
-        height: 350
+        x: 342
+        y: 358
+        width: 350
+        height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet_13
+      name: dog3-run2
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 361
+        width: 340
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dog3-run3
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 342
+        width: 350
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dog4-idle
       rect:
         serializedVersion: 2
         x: 0
-        y: 36
-        width: 226
-        height: 204
+        y: 0
+        width: 340
+        height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet_14
+      name: dog4-run1
       rect:
         serializedVersion: 2
-        x: 254
-        y: 36
-        width: 226
-        height: 204
+        x: 342
+        y: 0
+        width: 350
+        height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet_15
+      name: dog4-run2
       rect:
         serializedVersion: 2
-        x: 505
-        y: 36
-        width: 226
-        height: 204
+        x: 694
+        y: 0
+        width: 340
+        height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet_16
+      name: dog4-run3
       rect:
         serializedVersion: 2
-        x: 756
-        y: 35
-        width: 226
-        height: 204
+        x: 1036
+        y: 0
+        width: 350
+        height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spritesheet_17
-      rect:
-        serializedVersion: 2
-        x: 1017
-        y: 133
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spritesheet_18
-      rect:
-        serializedVersion: 2
-        x: 1038
-        y: 123
-        width: 10
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spritesheet_19
-      rect:
-        serializedVersion: 2
-        x: 1058
-        y: 82
-        width: 21
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spritesheet_20
-      rect:
-        serializedVersion: 2
-        x: 1089
-        y: 71
-        width: 31
-        height: 134
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spritesheet_21
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 50
-        width: 62
-        height: 176
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spritesheet_22
-      rect:
-        serializedVersion: 2
-        x: 1161
-        y: 71
-        width: 186
-        height: 155
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spritesheet_23
-      rect:
-        serializedVersion: 2
-        x: 1371
-        y: 71
-        width: 315
-        height: 169
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
