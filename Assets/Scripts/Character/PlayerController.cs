@@ -191,6 +191,8 @@ public class PlayerController : MonoBehaviour {
         // Jump if the player is on the ground.
         if ((_controller.IsGrounded || _velocity.y == 0) && jumpInput) {
             _velocity.y = Mathf.Sqrt(2f * jumpHeight * -GameManager.GRAVITY);
+
+            AudioManager.Instance.playAudioClip(AudioManager.AvailableAudioClips.jump);
         }
 
         return jumpInput;
