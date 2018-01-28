@@ -65,7 +65,12 @@ public class PlayerController : MonoBehaviour {
         }
         else if (col.gameObject.tag == "Projectile")
         {
-            Debug.Log("Hit Projectile!");
+            if(col.gameObject.GetComponent<Projectile>()._playerID != _playerID)
+            {
+                GameManager.Instance.players[_playerID].Spawn();
+                Destroy(col.gameObject);
+                Destroy(this.gameObject);
+            }
         }
     }
 
