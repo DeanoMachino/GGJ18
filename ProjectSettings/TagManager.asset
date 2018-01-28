@@ -8,6 +8,10 @@ TagManager:
   - Spawns
   - Collectable
   - Environment
+  - Player-01
+  - Player-02
+  - Player-03
+  - Player-04
   layers:
   - Default
   - TransparentFX

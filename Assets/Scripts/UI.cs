@@ -10,7 +10,7 @@ public class UI : MonoBehaviour {
 
     private string placeholder_player_parts = "Player-Parts";
 
-
+    /**
     // Use this for initialization
     void Start () {
         // Do nothing if null
@@ -18,7 +18,7 @@ public class UI : MonoBehaviour {
 
         this.deactivatePlayers();
     }
-	
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -29,6 +29,7 @@ public class UI : MonoBehaviour {
         {
             this.updatePlayerParts(player);
         }
+        
     }
 
     public void deactivatePlayers()
@@ -40,7 +41,7 @@ public class UI : MonoBehaviour {
             }
         }
     }
-
+    
     public void deactivatePlayer(Player player)
     {
         Component comp = this.getPlayerComp(player.playerID);
@@ -49,7 +50,7 @@ public class UI : MonoBehaviour {
 
     public void updatePlayerParts(Player player)
     {
-        GameObject[] player_parts = this.getPlayerComponants(player.playerID);
+        GameObject[] player_parts = this.getPlayerComponents(player.playerID);
 
         // Foreach image object
         foreach (GameObject comp in player_parts)
@@ -59,9 +60,7 @@ public class UI : MonoBehaviour {
                 Debug.Log(">>> " + comp.name);
             }
         }
-        
     }
-
     public Component getPlayerComp(int player_id)
     {
         Component comp = new Component();
@@ -85,9 +84,10 @@ public class UI : MonoBehaviour {
         return comp;
     }
 
-    public GameObject[] getPlayerComponants(int player_id)
+    public GameObject[] getPlayerComponents(int player_id)
     {
         Component comp = this.getPlayerComp(player_id);
         return comp.GetComponents<GameObject>();
     }
+    **/
 }
