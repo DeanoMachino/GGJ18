@@ -62,7 +62,7 @@ public class UI : MonoBehaviour {
     public void updatePlayerParts(Player player)
     {
         // TODO: Refactor
-        int index = player.playerindex + 1;
+        int index = player.playerID + 1;
         GameObject[] radios = GameObject.FindGameObjectsWithTag("Player-0" + index.ToString());
 
         if (player.P1)
