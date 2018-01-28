@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject PlayerPF;
     public static GameObject[] SpawnLocations;
     public List<Player> players = new List<Player>();
     public static GameManager Instance;
@@ -81,6 +82,7 @@ public class GameManager : MonoBehaviour
             PlayerToAdd.Name = "Player" + a + 1;
             PlayerToAdd.playerindex = a;
             players.Add(PlayerToAdd);
+            players[a].Spawn(PlayerPF);
         }
     }
 }
