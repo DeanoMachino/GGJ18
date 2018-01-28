@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,17 +41,21 @@ public class GameManager : MonoBehaviour
         countdownTextUI.gameObject.SetActive(true);
     }
 
-    public bool IsCountingDown() {
+    public bool IsCountingDown()
+    {
         return _countingDown;
     }
 
-    private void Update() {
-        if (_countingDown && _countdownValue > 1) {
+    private void Update()
+    {
+        if (_countingDown && _countdownValue > 1)
+        {
             _countdownValue -= Time.deltaTime;
 
             countdownTextUI.text = string.Format("{0}", (int)_countdownValue);
 
-            if (_countdownValue <= 1) {
+            if (_countdownValue <= 1)
+            {
                 _countingDown = false;
                 countdownTextUI.gameObject.SetActive(false);
                 AudioManager.Instance.playAudioClip(AudioManager.AvailableAudioClips.gameStart);
@@ -100,23 +105,27 @@ public class GameManager : MonoBehaviour
 
     void Won(Player P)
     {
-        if(P != null)
+        if (P != null)
         {
-            //Stop Game
-            GameEnded = true;
-
-            //Open End Game UI and close all other UI
-            GameObject[] UIs = GameObject.FindGameObjectsWithTag("UI");
-
-            foreach( GameObject GO in UIs)
+            if (!GameEnded)
             {
-                Debug.Log(GO);
-                Destroy(GO);
+                //Stop Game
+                GameEnded = true;
+
+                //Open End Game UI and close all other UI
+                GameObject[] UIs = GameObject.FindGameObjectsWithTag("UI");
+
+                foreach (GameObject GO in UIs)
+                {
+                    Debug.Log(GO);
+                    Destroy(GO);
+                }
+
+                GameObject SpawnEndGameUI = Instantiate(EndGameUI, transform.position, transform.rotation) as GameObject;
+                Debug.Log(SpawnEndGameUI);
+                Winner = P.Name;
             }
 
-            GameObject SpawnEndGameUI = Instantiate(EndGameUI, transform.position, transform.rotation) as GameObject;
-            Debug.Log(SpawnEndGameUI);
-            Winner = P.Name;
         }
     }
 
@@ -132,15 +141,17 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGame()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene("Game");
     }
 
-    public void KillPlayer(int id) {
+    public void KillPlayer(int id)
+    {
         Destroy(players[id].PlayerReference);
         players[id].Spawn();
     }
 
-    private void CreateMap() {
+    private void CreateMap()
+    {
         int[,] rawGrid = new int[16, 30] {
             {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -160,11 +171,14 @@ public class GameManager : MonoBehaviour
             {1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}
         };
 
-        for(int y = 0; y < 16; y++) {
-            for(int x = 0; x < 30; x++) {
+        for (int y = 0; y < 16; y++)
+        {
+            for (int x = 0; x < 30; x++)
+            {
                 GameObject prefab = null;
 
-                switch((MapTiles)rawGrid[y, x]) {
+                switch ((MapTiles)rawGrid[y, x])
+                {
                     case MapTiles.Block:
                         prefab = blockPrefab;
                         break;
@@ -178,7 +192,8 @@ public class GameManager : MonoBehaviour
                         break;
                 }
 
-                if (prefab != null) {
+                if (prefab != null)
+                {
                     GameObject tile = Instantiate(prefab);
                     tile.transform.SetParent(MapParent);
                     tile.transform.localPosition = new Vector3(-14.5f + x, 7.5f - y, 0);
@@ -188,7 +203,8 @@ public class GameManager : MonoBehaviour
     }
 }
 
-public enum MapTiles {
+public enum MapTiles
+{
     Empty = 0,
     Block = 1,
     Block_Top = 2,
@@ -238,12 +254,14 @@ public class Player
     public bool P3;
     public bool P4;
 
-    public Player(int playerID) {
+    public Player(int playerID)
+    {
         this.playerID = playerID;
         Spawn();
     }
 
-    public float GetChargeAmount() {
+    public float GetChargeAmount()
+    {
         return PlayerReference.GetComponent<PlayerController>().GetChargeProgress();
     }
 
