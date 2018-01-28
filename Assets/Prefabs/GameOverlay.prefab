@@ -505,6 +505,10 @@ MonoBehaviour:
   player_02: {fileID: 1405717354148788}
   player_03: {fileID: 1587114516114546}
   player_04: {fileID: 1099079394122546}
+  radio_active_1: {fileID: 0}
+  radio_active_2: {fileID: 0}
+  radio_active_3: {fileID: 0}
+  radio_active_4: {fileID: 0}
 --- !u!114 &114091913727768862
 MonoBehaviour:
   m_ObjectHideFlags: 1
