@@ -5,10 +5,12 @@ using UnityEngine;
 public class SpawnCollectable : MonoBehaviour {
 
     public GameObject Collectable;
+    public GameObject[] CollectableSpawns;
     GameObject SpawnCol = null;
 
     // Use this for initialization
     void Start () {
+        CollectableSpawns = GameObject.FindGameObjectsWithTag("SpawnCollectable");
         Spawn();
     }
 	
@@ -22,8 +24,9 @@ public class SpawnCollectable : MonoBehaviour {
 
     void Spawn()
     {
-        SpawnCol = Instantiate(Collectable) as GameObject;
-        SpawnCol.transform.position = transform.position;
+        int index = Random.Range(0, CollectableSpawns.Length);
+        GameObject currentPoint = CollectableSpawns[index];
+        SpawnCol = Instantiate(Collectable, currentPoint.transform) as GameObject;
     }
 }
 public enum Parts
