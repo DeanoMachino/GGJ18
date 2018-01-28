@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
             if (_countdownValue <= 1) {
                 _countingDown = false;
                 countdownTextUI.gameObject.SetActive(false);
+                AudioManager.Instance.playAudioClip(AudioManager.AvailableAudioClips.gameStart);
             }
         }
     }

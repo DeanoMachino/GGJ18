@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip chargingAttackSound;
     public AudioClip attackSound;
+    public AudioClip gameStart;
 
     public AudioClip gameMusic;
     public AudioClip mainMenuMusic;
@@ -65,6 +66,9 @@ public class AudioManager : MonoBehaviour
             case AvailableAudioClips.chargeAttack:
                 sfxSource.PlayOneShot(chargingAttackSound, 0.1f);
                 break;
+            case AvailableAudioClips.gameStart:
+                sfxSource.PlayOneShot(gameStart, 0.5f);
+                break;
             default:
                 break;
         }
@@ -74,7 +78,8 @@ public class AudioManager : MonoBehaviour
     {
         jump,
         chargeAttack,
-        releaseAttack
+        releaseAttack,
+        gameStart
     }
 
     public enum AvailableMusicClips

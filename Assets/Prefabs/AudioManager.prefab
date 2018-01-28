@@ -218,5 +218,6 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: c3528d6923893664d96ee3f8dcd5fc16, type: 3}
   chargingAttackSound: {fileID: 8300000, guid: 1a5a409f0deeb2e43b6db7758c043dc6, type: 3}
   attackSound: {fileID: 8300000, guid: 1594a63b7505299439e11141914cfef9, type: 3}
+  gameStart: {fileID: 8300000, guid: 5336735da692c9949a024efe423ec474, type: 3}
   gameMusic: {fileID: 8300000, guid: 595222d4a9ac5ce459c712f741c4b4d0, type: 3}
   mainMenuMusic: {fileID: 8300000, guid: 595222d4a9ac5ce459c712f741c4b4d0, type: 3}
