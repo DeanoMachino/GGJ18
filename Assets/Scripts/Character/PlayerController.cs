@@ -12,14 +12,11 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject projectilePrefab;
 
-    [HideInInspector]
-    private float normalizedHorizontalSpeed = 0;
-
     private CharacterController2D _controller;
     private Animator _animator;
     private Vector3 _velocity;
 
-    private int _playerID = 1;
+    public int playerID = 1;
 
     private bool _isChargingAttack = false;
     private float _chargingProgress;
@@ -49,28 +46,19 @@ public class PlayerController : MonoBehaviour {
             switch (col.gameObject.GetComponent<Collectable>().Part)
             {
                 case Parts.RadioP1:
-                    GameManager.Instance.UpdateScore(Score.GotPart1, _playerID, 0);
+                    GameManager.Instance.UpdateScore(Score.GotPart1, playerID, 0);
                     break;
                 case Parts.RadioP2:
-                    GameManager.Instance.UpdateScore(Score.GotPart2, _playerID, 0);
+                    GameManager.Instance.UpdateScore(Score.GotPart2, playerID, 0);
                     break;
                 case Parts.RadioP3:
-                    GameManager.Instance.UpdateScore(Score.GotPart3, _playerID, 0);
+                    GameManager.Instance.UpdateScore(Score.GotPart3, playerID, 0);
                     break;
                 case Parts.RadioP4:
-                    GameManager.Instance.UpdateScore(Score.GotPart4, _playerID, 0);
+                    GameManager.Instance.UpdateScore(Score.GotPart4, playerID, 0);
                     break;
             }
             Destroy(col.gameObject);
-        }
-        else if (col.gameObject.tag == "Projectile")
-        {
-            if(col.gameObject.GetComponent<Projectile>()._playerID != _playerID)
-            {
-                GameManager.Instance.players[_playerID].Spawn();
-                Destroy(col.gameObject);
-                Destroy(this.gameObject);
-            }
         }
     }
 
@@ -91,7 +79,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void Initialise(int id) {
-        _playerID = id;
+        playerID = id;
+
+        SetUpVisuals();
+    }
+
+    private void SetUpVisuals() {
+        _animator.runtimeAnimatorController = CharacterSpriteManager.Instance.characterAnimators[playerID];
     }
 
     private void Update() {
@@ -121,7 +115,8 @@ public class PlayerController : MonoBehaviour {
             Projectile projectile = projectileGO.GetComponent<Projectile>();
             float velocity = _chargingProgress * 20;
             float lifetime = 3;
-            projectile.Initialise(_playerID, GetAttackDirection(), velocity, lifetime);
+            projectile.Initialise(playerID, GetAttackDirection(), velocity, lifetime);
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), projectileGO.GetComponent<Collider2D>());
             Debug.Log("Attack released");
         }
         _chargingProgress = 0;
@@ -133,7 +128,7 @@ public class PlayerController : MonoBehaviour {
         var vertical = Input.GetAxis(GetControlString(PlayerControls.VerticalAim));
 
         if (horizontal == 0 && vertical == 0) {
-            horizontal = 1;
+            horizontal = IsFacingLeft() ? -1 : 1;
         }
 
         return new Vector2(horizontal, -vertical).normalized;
@@ -222,15 +217,15 @@ public class PlayerController : MonoBehaviour {
     private string GetControlString(PlayerControls control) {
         switch (control) {
             case PlayerControls.Movement:
-                return string.Format("Player{0}Movement", _playerID + 1);
+                return string.Format("Player{0}Movement", playerID + 1);
             case PlayerControls.HorizontalAim:
-                return string.Format("Player{0}AimHorizontal", _playerID + 1);
+                return string.Format("Player{0}AimHorizontal", playerID + 1);
             case PlayerControls.VerticalAim:
-                return string.Format("Player{0}AimVertical", _playerID + 1);
+                return string.Format("Player{0}AimVertical", playerID + 1);
             case PlayerControls.Jump:
-                return string.Format("Player{0}Jump", _playerID + 1);
+                return string.Format("Player{0}Jump", playerID + 1);
             case PlayerControls.Attack:
-                return string.Format("Player{0}Attack", _playerID + 1);
+                return string.Format("Player{0}Attack", playerID + 1);
         }
         return "";
     }
@@ -241,6 +236,10 @@ public class PlayerController : MonoBehaviour {
         VerticalAim,
         Jump,
         Attack
+    }
+
+    private bool IsFacingLeft() {
+        return transform.localScale.x < 0;
     }
 
 }
