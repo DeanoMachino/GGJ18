@@ -62,7 +62,8 @@ public class UI : MonoBehaviour {
     public void updatePlayerParts(Player player)
     {
         // TODO: Refactor
-        GameObject[] radios = GameObject.FindGameObjectsWithTag("Player-0" + player.playerindex.ToString());
+        int index = player.playerindex + 1;
+        GameObject[] radios = GameObject.FindGameObjectsWithTag("Player-0" + index.ToString());
 
         if (player.P1)
         {
