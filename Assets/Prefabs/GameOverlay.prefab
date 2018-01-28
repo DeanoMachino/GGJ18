@@ -20,13 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224687344418228230}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-02
-  m_TagString: Player-04
-=======
   m_Name: Player-Parts
   m_TagString: Untagged
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,13 +69,8 @@ GameObject:
   - component: {fileID: 222399564813282350}
   - component: {fileID: 114403910139951812}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-01
-  m_TagString: Player-02
-=======
   m_Name: Icon-Radio-03
   m_TagString: Player-01
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,13 +86,8 @@ GameObject:
   - component: {fileID: 222690432185633702}
   - component: {fileID: 114953692297170618}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-03
-  m_TagString: Player-01
-=======
   m_Name: Icon-Radio-02
   m_TagString: Player-02
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,13 +103,8 @@ GameObject:
   - component: {fileID: 222735738798174940}
   - component: {fileID: 114467900295939608}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-03
-  m_TagString: Player-03
-=======
   m_Name: Icon-Radio-01
   m_TagString: Player-01
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,13 +137,8 @@ GameObject:
   - component: {fileID: 222123096068904498}
   - component: {fileID: 114394676089593774}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-01
-  m_TagString: Player-01
-=======
   m_Name: Icon-Radio-03
   m_TagString: Player-03
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,11 +189,7 @@ GameObject:
   - component: {fileID: 114325819665869128}
   m_Layer: 5
   m_Name: Icon-Radio-04
-<<<<<<< HEAD
-  m_TagString: Player-01
-=======
   m_TagString: Player-04
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,13 +271,8 @@ GameObject:
   - component: {fileID: 222478068041946032}
   - component: {fileID: 114985625384023044}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-01
-  m_TagString: Player-04
-=======
   m_Name: Player-Icon
   m_TagString: Untagged
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,13 +286,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224431632065944860}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-01
-  m_TagString: Player-03
-=======
   m_Name: Player-Parts
   m_TagString: Untagged
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -342,13 +303,8 @@ GameObject:
   - component: {fileID: 222590979885637024}
   - component: {fileID: 114910692328094794}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-03
-  m_TagString: Player-04
-=======
   m_Name: Icon-Radio-01
   m_TagString: Player-03
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -364,13 +320,8 @@ GameObject:
   - component: {fileID: 222579288808276980}
   - component: {fileID: 114097593710942498}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-02
-  m_TagString: Player-03
-=======
   m_Name: Icon-Radio-03
   m_TagString: Player-04
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -384,13 +335,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224239648402598184}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-04
-  m_TagString: Player-04
-=======
   m_Name: Player-P03-BotLeft
   m_TagString: Untagged
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,13 +350,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224174944097789028}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-03
-  m_TagString: Player-02
-=======
   m_Name: Player-Parts
   m_TagString: Untagged
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -426,13 +367,8 @@ GameObject:
   - component: {fileID: 222352510798183820}
   - component: {fileID: 114461977982153214}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-02
-  m_TagString: Player-01
-=======
   m_Name: Icon-Radio-03
   m_TagString: Player-02
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -495,11 +431,7 @@ GameObject:
   - component: {fileID: 222414408452345252}
   - component: {fileID: 114188139156953046}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-02
-=======
   m_Name: Icon-Radio-01
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_TagString: Player-02
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -552,13 +484,8 @@ GameObject:
   - component: {fileID: 114116924740393486}
   - component: {fileID: 114012303355703686}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: Icon-Radio-04
-  m_TagString: Player-02
-=======
   m_Name: GameOverlay
   m_TagString: Untagged
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -688,11 +615,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: 1b3e6f12728ef184cbe7cc67d2623011, type: 3}
-=======
   m_Sprite: {fileID: 21300000, guid: ea4f623dd7d22594e840538e4b4b7c8f, type: 3}
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -746,11 +669,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: ea4f623dd7d22594e840538e4b4b7c8f, type: 3}
-=======
   m_Sprite: {fileID: 21300000, guid: 112c5b328014a8f44bd82c4070787305, type: 3}
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -777,11 +696,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: 112c5b328014a8f44bd82c4070787305, type: 3}
-=======
   m_Sprite: {fileID: 21300000, guid: bf52b191a0df5434d91fc6cee7f1be19, type: 3}
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -808,11 +723,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: ea4f623dd7d22594e840538e4b4b7c8f, type: 3}
-=======
   m_Sprite: {fileID: 21300000, guid: 112c5b328014a8f44bd82c4070787305, type: 3}
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -839,11 +750,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: bf52b191a0df5434d91fc6cee7f1be19, type: 3}
-=======
   m_Sprite: {fileID: 21300000, guid: b490ddb9d82f452438388dbb907b960c, type: 3}
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -870,11 +777,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: ea4f623dd7d22594e840538e4b4b7c8f, type: 3}
-=======
   m_Sprite: {fileID: 21300000, guid: 112c5b328014a8f44bd82c4070787305, type: 3}
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1009,11 +912,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: bf52b191a0df5434d91fc6cee7f1be19, type: 3}
-=======
   m_Sprite: {fileID: 21300000, guid: 44e0742112bfa0947bc1e3901fad3ca2, type: 3}
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1040,11 +939,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: ea4f623dd7d22594e840538e4b4b7c8f, type: 3}
-=======
   m_Sprite: {fileID: 21300000, guid: bf52b191a0df5434d91fc6cee7f1be19, type: 3}
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1098,11 +993,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: 1b3e6f12728ef184cbe7cc67d2623011, type: 3}
-=======
   m_Sprite: {fileID: 21300000, guid: f14bbc3a05ad4764abb6181d3614ca76, type: 3}
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1129,11 +1020,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: 112c5b328014a8f44bd82c4070787305, type: 3}
-=======
   m_Sprite: {fileID: 21300000, guid: 1b3e6f12728ef184cbe7cc67d2623011, type: 3}
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1160,11 +1047,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: bf52b191a0df5434d91fc6cee7f1be19, type: 3}
-=======
   m_Sprite: {fileID: 21300000, guid: 4cc98a22d4477cf4fb93e8a30d1666c5, type: 3}
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1191,11 +1074,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-<<<<<<< HEAD
-  m_Sprite: {fileID: 21300000, guid: 112c5b328014a8f44bd82c4070787305, type: 3}
-=======
   m_Sprite: {fileID: 21300000, guid: bf52b191a0df5434d91fc6cee7f1be19, type: 3}
->>>>>>> 204f7aa633540c7fb84d9747dd692a5a374f63ee
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
