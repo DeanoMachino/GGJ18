@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour
     public GameObject EndGameUI;
     public string Winner;
 
+    public Transform MapParent;
+    public GameObject blockPrefab;
+    public GameObject blockTopPrefab;
+    public GameObject platformPrefab;
+
     private void Awake()
     {
         Instance = this;
@@ -20,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
+        CreateMap();
+        AudioManager.Instance.playBackgroundMusic(AudioManager.AvailableMusicClips.ingameMusic);
         SetUpPlayers(4);
     }
 
@@ -104,6 +111,60 @@ public class GameManager : MonoBehaviour
         Destroy(players[id].PlayerReference);
         players[id].Spawn();
     }
+
+    private void CreateMap() {
+        int[,] rawGrid = new int[16, 30] {
+            {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0},
+            {2, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 2},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 1, 1, 0, 0, 0, 0, 0, 0},
+            {2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2},
+            {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+            {1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 2, 2, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1},
+            {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
+            {1, 1, 1, 2, 2, 2, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 2, 2, 2, 1, 1, 1},
+            {1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}
+        };
+
+        for(int y = 0; y < 16; y++) {
+            for(int x = 0; x < 30; x++) {
+                GameObject prefab = null;
+
+                switch((MapTiles)rawGrid[y, x]) {
+                    case MapTiles.Block:
+                        prefab = blockPrefab;
+                        break;
+                    case MapTiles.Block_Top:
+                        prefab = blockTopPrefab;
+                        break;
+                    case MapTiles.Platform:
+                        prefab = platformPrefab;
+                        break;
+                    default:
+                        break;
+                }
+
+                if (prefab != null) {
+                    GameObject tile = Instantiate(prefab);
+                    tile.transform.SetParent(MapParent);
+                    tile.transform.localPosition = new Vector3(-14.5f + x, 7.5f - y, 0);
+                }
+            }
+        }
+    }
+}
+
+public enum MapTiles {
+    Empty = 0,
+    Block = 1,
+    Block_Top = 2,
+    Platform = 3
 }
 
 public enum Score
