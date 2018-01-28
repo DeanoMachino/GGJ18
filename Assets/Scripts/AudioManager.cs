@@ -43,7 +43,11 @@ public class AudioManager : MonoBehaviour
                 musicSource.PlayOneShot(gameMusic);
                 break;
             case AvailableMusicClips.mainMenuMusic:
-                musicSource.PlayOneShot(mainMenuMusic);
+                musicSource.clip = gameMusic;
+                musicSource.enabled = true;
+                musicSource.loop = true;
+                musicSource.Play();
+
                 break;
             default:
                 break;
@@ -53,15 +57,16 @@ public class AudioManager : MonoBehaviour
 
     public void playAudioClip(AvailableAudioClips AAC)
     {
+  
         switch (AAC) {
             case AvailableAudioClips.attack:
-                sfxSource.PlayOneShot(jumpSound);
+                sfxSource.PlayOneShot(attackSound,0.1f);
                 break;
             case AvailableAudioClips.jump:
-                sfxSource.PlayOneShot(chargingAttackSound);
+                sfxSource.PlayOneShot(jumpSound, 0.5f);
                 break;
             case AvailableAudioClips.chargeAttack:
-                sfxSource.PlayOneShot(attackSound);
+                sfxSource.PlayOneShot(chargingAttackSound, 0.1f);
                 break;
             default:
                 break;
