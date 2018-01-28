@@ -216,7 +216,7 @@ MonoBehaviour:
   sfxSource: {fileID: 82207244743804682}
   musicSource: {fileID: 82651999645001342}
   jumpSound: {fileID: 8300000, guid: c3528d6923893664d96ee3f8dcd5fc16, type: 3}
-  chargingAttackSound: {fileID: 8300000, guid: 827dff375c54fbc45bdd3a7bd872a881, type: 3}
-  attackSound: {fileID: 8300000, guid: accedd8aef71c3e4186bb76351630537, type: 3}
+  chargingAttackSound: {fileID: 8300000, guid: 1a5a409f0deeb2e43b6db7758c043dc6, type: 3}
+  attackSound: {fileID: 8300000, guid: 1594a63b7505299439e11141914cfef9, type: 3}
   gameMusic: {fileID: 8300000, guid: 595222d4a9ac5ce459c712f741c4b4d0, type: 3}
   mainMenuMusic: {fileID: 8300000, guid: 595222d4a9ac5ce459c712f741c4b4d0, type: 3}

@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour {
 
     void Start()
     {
-        AudioManager.Instance.playBackgroundMusic(AudioManager.AvailableMusicClips.ingameMusic);
     }
 
     void onControllerCollider(RaycastHit2D hit) {
@@ -118,6 +117,7 @@ public class PlayerController : MonoBehaviour {
             projectile.Initialise(playerID, GetAttackDirection(), velocity, lifetime);
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), projectileGO.GetComponent<Collider2D>());
             Debug.Log("Attack released");
+            AudioManager.Instance.playAudioClip(AudioManager.AvailableAudioClips.releaseAttack);
         }
         _chargingProgress = 0;
         _isChargingAttack = false;

@@ -1,11 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 public class AudioManager : MonoBehaviour
 {
-
     public static AudioManager Instance;
 
     public AudioSource sfxSource;
@@ -44,24 +43,20 @@ public class AudioManager : MonoBehaviour
                 musicSource.loop = true;
                 musicSource.Play();
                 break;
-
             case AvailableMusicClips.mainMenuMusic:
                 musicSource.clip = gameMusic;
                 musicSource.loop = true;
                 musicSource.Play();
                 break;
-
             default:
                 break;
         }
-
     }
 
     public void playAudioClip(AvailableAudioClips AAC)
     {
-  
         switch (AAC) {
-            case AvailableAudioClips.attack:
+            case AvailableAudioClips.releaseAttack:
                 sfxSource.PlayOneShot(attackSound,0.1f);
                 break;
             case AvailableAudioClips.jump:
@@ -79,7 +74,7 @@ public class AudioManager : MonoBehaviour
     {
         jump,
         chargeAttack,
-        attack
+        releaseAttack
     }
 
     public enum AvailableMusicClips
