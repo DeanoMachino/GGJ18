@@ -10,11 +10,12 @@ public class CharacterSpriteManager : MonoBehaviour {
         Instance = this;
     }
 
-    public List<CharacterSprites> characterSprites;
+    public List<CharacterAnimation> characterAnimations
+        ;
 }
 
 [System.Serializable]
-public class CharacterSprites {
-    public Sprite IdleSprite;
-    public List<Sprite> RunSprites;
+public class CharacterAnimation {
+    public Sprite idleSprite;
+    public RuntimeAnimatorController animationController;
 }
