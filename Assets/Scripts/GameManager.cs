@@ -99,6 +99,11 @@ public class GameManager : MonoBehaviour
     {
         Application.LoadLevel(Application.loadedLevel);
     }
+
+    public void KillPlayer(int id) {
+        Destroy(players[id].PlayerReference);
+        players[id].Spawn();
+    }
 }
 
 public enum Score

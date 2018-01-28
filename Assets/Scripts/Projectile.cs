@@ -45,7 +45,13 @@ public class Projectile : MonoBehaviour
         //Debug.Log("Hit = " + collision.gameObject.name);
         if (collision.gameObject.tag == "Player")
         {
-            //Debug.Log("I hit a player!");
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            if (player.playerID != _playerID) {
+                // Kill player
+                GameManager.Instance.KillPlayer(player.playerID);
+                Destroy(gameObject);
+                Debug.Log("I hit a player!");
+            }
         }
     }
     
