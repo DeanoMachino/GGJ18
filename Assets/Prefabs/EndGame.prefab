@@ -516,7 +516,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114633034002415846}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114886073098654324}
+        m_MethodName: goToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114224425652052524
@@ -666,7 +677,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114027308538338360}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114886073098654324}
+        m_MethodName: Replay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114549547398253972
@@ -879,6 +901,7 @@ MonoBehaviour:
   player_2: {fileID: 21300000, guid: f14bbc3a05ad4764abb6181d3614ca76, type: 3}
   player_3: {fileID: 21300000, guid: b490ddb9d82f452438388dbb907b960c, type: 3}
   player_4: {fileID: 21300000, guid: 4cc98a22d4477cf4fb93e8a30d1666c5, type: 3}
+  replay_button: {fileID: 1232219881223406}
 --- !u!114 &114893725558433704
 MonoBehaviour:
   m_ObjectHideFlags: 1

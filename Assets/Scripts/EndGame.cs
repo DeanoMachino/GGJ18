@@ -7,6 +7,8 @@ public class EndGame : MonoBehaviour {
     public Sprite player_3;
     public Sprite player_4;
 
+    public GameObject replay_button;
+
     // Use this for initialization
     void Update () {
 
@@ -55,4 +57,15 @@ public class EndGame : MonoBehaviour {
         return player_4;
     }
 	
+
+    public void Replay()
+    {
+        GameManager gm = GameManager.Instance;
+        gm.RestartGame();
+    }
+
+    public void goToMenu()
+    {
+        // TODO
+    }
 }

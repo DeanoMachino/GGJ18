@@ -13,6 +13,7 @@ TagManager:
   - Player-03
   - Player-04
   - UI
+  - SpawnCollectable
   layers:
   - Default
   - TransparentFX
