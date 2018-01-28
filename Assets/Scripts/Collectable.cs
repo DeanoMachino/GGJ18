@@ -7,6 +7,11 @@ public class Collectable : MonoBehaviour
     public Parts Part;
     SpriteRenderer SR;
 
+    public Sprite part_1;
+    public Sprite part_2;
+    public Sprite part_3;
+    public Sprite part_4;
+
     void Start()
     {
         SR = GetComponent<SpriteRenderer>();
@@ -15,20 +20,16 @@ public class Collectable : MonoBehaviour
         switch (Part)
         {
             case Parts.RadioP1:
-                //SR.sprite
-                //SR.color = Color.blue;
+                SR.sprite = part_1;
                 break;
             case Parts.RadioP2:
-                //SR.sprite
-                SR.color = Color.white;
+                SR.sprite = part_2;
                 break;
             case Parts.RadioP3:
-                //SR.sprite
-                SR.color = Color.black;
+                SR.sprite = part_3;
                 break;
             case Parts.RadioP4:
-                //SR.sprite
-                SR.color = Color.grey;
+                SR.sprite = part_4;
                 break;
         }
         Destroy(gameObject, 5);
