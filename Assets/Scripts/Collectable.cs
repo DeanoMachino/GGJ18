@@ -11,7 +11,7 @@ public class Collectable : MonoBehaviour
     {
         SR = GetComponent<SpriteRenderer>();
         Part = (Parts)Random.Range(0, 4);
-        Debug.Log(Part);
+        //Debug.Log(Part);
         switch (Part)
         {
             case Parts.RadioP1:

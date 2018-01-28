@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 223119705387305434}
   - component: {fileID: 114549547398253972}
   - component: {fileID: 114390193361577650}
-  - component: {fileID: 95564087006301560}
+  - component: {fileID: 111193771750895978}
   m_Layer: 5
   m_Name: EndGame
   m_TagString: Untagged
@@ -358,23 +358,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &95564087006301560
-Animator:
-  serializedVersion: 3
+--- !u!111 &111193771750895978
+Animation:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1524004953096200}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ae9f3d74c8cb4fb47b3d7ffaa80fb042, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 77d3d92e6c3e4cc41ab87e73be29d6ec, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 77d3d92e6c3e4cc41ab87e73be29d6ec, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114027308538338360
 MonoBehaviour:
   m_ObjectHideFlags: 1
