@@ -46,6 +46,8 @@ public class UI : MonoBehaviour {
 
     public void activateRadioByIndex(GameObject[] radios, int index)
     {
+        // Fix off by one
+        index = index + 1;
         foreach (GameObject radio in radios)
         {
             if (radio.name == "Icon-Radio-0" + index.ToString())
