@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class GameManager : MonoBehaviour
     public GameObject blockTopPrefab;
     public GameObject platformPrefab;
 
+    public Text countdownTextUI;
+
+    private bool _countingDown;
+    private float _countdownValue;
+
     private void Awake()
     {
         Instance = this;
@@ -28,6 +34,27 @@ public class GameManager : MonoBehaviour
         CreateMap();
         AudioManager.Instance.playBackgroundMusic(AudioManager.AvailableMusicClips.ingameMusic);
         SetUpPlayers(4);
+
+        _countdownValue = 3.9f;
+        _countingDown = true;
+        countdownTextUI.gameObject.SetActive(true);
+    }
+
+    public bool IsCountingDown() {
+        return _countingDown;
+    }
+
+    private void Update() {
+        if (_countingDown && _countdownValue > 1) {
+            _countdownValue -= Time.deltaTime;
+
+            countdownTextUI.text = string.Format("{0}", (int)_countdownValue);
+
+            if (_countdownValue <= 1) {
+                _countingDown = false;
+                countdownTextUI.gameObject.SetActive(false);
+            }
+        }
     }
 
     // Select what you want to update, index of player that needs to be updated, index of player of killed

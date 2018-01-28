@@ -88,7 +88,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
-        ProcessAttack();
+        if (!GameManager.Instance.IsCountingDown()) {
+            ProcessAttack();
+        }
     }
 
     private void ProcessAttack() {
@@ -139,7 +141,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        UpdatePhysics();
+        if (!GameManager.Instance.IsCountingDown()) {
+            UpdatePhysics();
+        }
     }
 
     private void UpdatePhysics() {
