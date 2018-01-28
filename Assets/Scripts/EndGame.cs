@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour {
 
@@ -29,12 +30,17 @@ public class EndGame : MonoBehaviour {
                 // Winner
                 if (gm.Winner == player.Name)
                 {
-                    GameObject winner = this.transform.Find("Player-Winner").gameObject;
+                    Transform tranny = this.transform.Find("Player-Looser_");
+                    if (tranny == null) { continue; }
+
+                    GameObject winner = tranny.gameObject;
                     sprite = winner.GetComponent<Sprite>();
                     is_winner = true;
                 } else // loosers
                 {
-                    GameObject looser = this.transform.Find("Player-Looser_" + looser_index.ToString()).gameObject;
+                    Transform tranny = this.transform.Find("Player-Looser_" + looser_index.ToString());
+                    if (tranny == null) { continue; }
+                    GameObject looser = tranny.gameObject;
                     sprite = looser.GetComponent<Sprite>();
                     looser_index += 1;
                 }
@@ -75,6 +81,6 @@ public class EndGame : MonoBehaviour {
 
     public void goToMenu()
     {
-        // TODO
+        SceneManager.LoadScene("MainMenuScene");
     }
 }
