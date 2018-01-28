@@ -929,6 +929,16 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &525880097 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1419430265078590, guid: 289539b414702544cb6ff706656221bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 113351768}
+--- !u!1 &578596965 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1419430265078590, guid: 289539b414702544cb6ff706656221bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1084938267}
 --- !u!1 &630571339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,9 +1326,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c0a0563a0b18294abd0543c70449e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnLocations: []
+  SpawnLocations:
+  - {fileID: 1404493451}
+  - {fileID: 525880097}
+  - {fileID: 1418171605}
+  - {fileID: 578596965}
   GameEnded: 0
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 1010841450681678, guid: 2e1d69518df5e3542b86c0b6729d6e7f,
+    type: 2}
 --- !u!4 &702491223
 Transform:
   m_ObjectHideFlags: 0
@@ -2107,6 +2122,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1404493451 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1419430265078590, guid: 289539b414702544cb6ff706656221bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 342502602}
 --- !u!1 &1409636437
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,6 +2230,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1418171605 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1419430265078590, guid: 289539b414702544cb6ff706656221bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1291448895}
 --- !u!1 &1428062608
 GameObject:
   m_ObjectHideFlags: 0

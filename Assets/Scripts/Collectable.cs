@@ -10,7 +10,8 @@ public class Collectable : MonoBehaviour
     void Start()
     {
         SR = GetComponent<SpriteRenderer>();
-        Part = (Parts)Random.Range(0, 3);
+        Part = (Parts)Random.Range(0, 4);
+        Debug.Log(Part);
         switch (Part)
         {
             case Parts.RadioP1:
@@ -32,10 +33,4 @@ public class Collectable : MonoBehaviour
         }
         Destroy(gameObject, 5);
     }
-
-    public void Collected()
-    {
-        Debug.Log("Collected");
-    }
-
 }
