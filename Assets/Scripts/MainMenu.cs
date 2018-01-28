@@ -3,12 +3,17 @@ using UnityEditor.UI;
 
 public class MainMenu : MonoBehaviour {
 
-    public void onStartEvent()
+    /// <summary>
+    /// Play the game
+    /// </summary>
+    public void onPlayEvent()
     {
-
+        Debug.Log("Starting game...");
     }
 
-	// Quits game when called
+	/// <summary>
+    /// Quit function
+    /// </summary>
     public void onQuitEvent()
     {
         Debug.Log("Exiting Game");
