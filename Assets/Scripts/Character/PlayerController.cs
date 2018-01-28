@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour {
             horizontal = 1;
         }
 
-        return new Vector2(horizontal, vertical).normalized;
+        return new Vector2(horizontal, -vertical).normalized;
     }
 
     private void FixedUpdate() {
