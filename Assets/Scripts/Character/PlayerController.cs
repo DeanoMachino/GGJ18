@@ -123,6 +123,10 @@ public class PlayerController : MonoBehaviour {
         _isChargingAttack = false;
     }
 
+    public float GetChargeProgress() {
+        return _chargingProgress;
+    }
+
     private Vector3 GetAttackDirection() {
         var horizontal = Input.GetAxis(GetControlString(PlayerControls.HorizontalAim));
         var vertical = Input.GetAxis(GetControlString(PlayerControls.VerticalAim));

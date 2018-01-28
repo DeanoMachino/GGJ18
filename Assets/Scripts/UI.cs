@@ -12,6 +12,8 @@ public class UI : MonoBehaviour {
     public Sprite radio_active_3;
     public Sprite radio_active_4;
 
+    public Image[] player_charge_image;
+
     private string placeholder_player_parts = "Player-Parts";
 
     // Use this for initialization
@@ -31,6 +33,10 @@ public class UI : MonoBehaviour {
         foreach (Player player in GameManager.Instance.players)
         {
             this.updatePlayerParts(player);
+        }
+
+        for(int i = 0; i < GameManager.Instance.players.Count; i++) {
+            player_charge_image[i].fillAmount = GameManager.Instance.players[i].GetChargeAmount();
         }
     }
 

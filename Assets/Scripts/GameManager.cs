@@ -154,6 +154,10 @@ public class Player
         Spawn();
     }
 
+    public float GetChargeAmount() {
+        return PlayerReference.GetComponent<PlayerController>().GetChargeProgress();
+    }
+
     public void Spawn()
     {
         GameObject player = GameManager.Instantiate(GameManager.Instance.playerPrefab) as GameObject;
