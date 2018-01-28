@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour {
 
     #region Event Listeners
 
+    void Start()
+    {
+        AudioManager.Instance.playBackgroundMusic(AudioManager.AvailableMusicClips.ingameMusic);
+    }
+
     void onControllerCollider(RaycastHit2D hit) {
         // bail out on plain old ground hits cause they arent very interesting
         if (hit.normal.y == 1f) {
@@ -60,7 +65,12 @@ public class PlayerController : MonoBehaviour {
         }
         else if (col.gameObject.tag == "Projectile")
         {
-            Debug.Log("Hit Projectile!");
+            if(col.gameObject.GetComponent<Projectile>()._playerID != _playerID)
+            {
+                GameManager.Instance.players[_playerID].Spawn();
+                Destroy(col.gameObject);
+                Destroy(this.gameObject);
+            }
         }
     }
 
@@ -82,12 +92,6 @@ public class PlayerController : MonoBehaviour {
 
     public void Initialise(int id) {
         _playerID = id;
-
-        SetUpVisuals();
-    }
-
-    private void SetUpVisuals() {
-        _animator.runtimeAnimatorController = CharacterSpriteManager.Instance.characterAnimators[_playerID];
     }
 
     private void Update() {
@@ -197,7 +201,6 @@ public class PlayerController : MonoBehaviour {
         // Jump if the player is on the ground.
         if ((_controller.IsGrounded || _velocity.y == 0) && jumpInput) {
             _velocity.y = Mathf.Sqrt(2f * jumpHeight * -GameManager.GRAVITY);
-
             AudioManager.Instance.playAudioClip(AudioManager.AvailableAudioClips.jump);
         }
 
@@ -209,9 +212,9 @@ public class PlayerController : MonoBehaviour {
             if (jumping) {
                 //_animator.Play(Animator.StringToHash("Jump"));
             } else if (moving) {
-                _animator.Play(Animator.StringToHash("Run"));
+                //_animator.Play(Animator.StringToHash("Run");
             } else {
-                _animator.Play(Animator.StringToHash("Idle"));
+                //_animator.Play(Animator.StringToHash("Idle");
             }
         }
     }

@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Sound/game_music.wav.meta
 guid: 595222d4a9ac5ce459c712f741c4b4d0
-timeCreated: 1517073890
-=======
-guid: d29b7332fd4f01b4b885eab3f60a4a97
-timeCreated: 1517072591
->>>>>>> 19bf6ed62320af02306d590cee8d1cfb9003d4c9:Assets/Sound/game_music.wav.meta
-licenseType: Free
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
