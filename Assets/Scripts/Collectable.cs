@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,6 +32,6 @@ public class Collectable : MonoBehaviour
                 SR.sprite = part_4;
                 break;
         }
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 10);
     }
 }
