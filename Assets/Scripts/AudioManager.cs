@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
                 musicSource.Play();
                 break;
             case AvailableMusicClips.mainMenuMusic:
-                musicSource.clip = gameMusic;
+                musicSource.clip = mainMenuMusic;
                 musicSource.loop = true;
                 musicSource.Play();
                 break;

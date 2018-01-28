@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
-using UnityEditor.UI;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
+
+    void Start()
+    {
+        AudioManager.Instance.playBackgroundMusic(AudioManager.AvailableMusicClips.mainMenuMusic);
+    }
 
     /// <summary>
     /// Play the game
@@ -10,7 +14,7 @@ public class MainMenu : MonoBehaviour {
     public void onPlayEvent()
     {
         Debug.Log("Starting game...");
-        Application.LoadLevel("Game");
+        SceneManager.LoadScene("Game");
     }
 
 	/// <summary>
