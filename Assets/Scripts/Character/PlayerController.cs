@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour {
 
     #region Event Listeners
 
+    void Start()
+    {
+        AudioManager.Instance.playBackgroundMusic(AudioManager.AvailableMusicClips.ingameMusic);
+    }
 
     void onControllerCollider(RaycastHit2D hit) {
         // bail out on plain old ground hits cause they arent very interesting
@@ -83,12 +87,6 @@ public class PlayerController : MonoBehaviour {
 
     public void Initialise(int id) {
         _playerID = id;
-
-        SetUpVisuals();
-    }
-
-    private void SetUpVisuals() {
-        _animator.runtimeAnimatorController = CharacterSpriteManager.Instance.characterAnimators[_playerID];
     }
 
     private void Update() {
@@ -209,9 +207,9 @@ public class PlayerController : MonoBehaviour {
             if (jumping) {
                 //_animator.Play(Animator.StringToHash("Jump"));
             } else if (moving) {
-                _animator.Play(Animator.StringToHash("Run"));
+                //_animator.Play(Animator.StringToHash("Run");
             } else {
-                _animator.Play(Animator.StringToHash("Idle"));
+                //_animator.Play(Animator.StringToHash("Idle");
             }
         }
     }
