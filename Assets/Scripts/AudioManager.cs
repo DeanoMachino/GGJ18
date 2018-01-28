@@ -39,11 +39,13 @@ public class AudioManager : MonoBehaviour
         switch (AMC)
         {
             case AvailableMusicClips.ingameMusic:
+                musicSource.Stop();
                 musicSource.clip = gameMusic;
                 musicSource.loop = true;
                 musicSource.Play();
                 break;
             case AvailableMusicClips.mainMenuMusic:
+                musicSource.Stop();
                 musicSource.clip = mainMenuMusic;
                 musicSource.loop = true;
                 musicSource.Play();
