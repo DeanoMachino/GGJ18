@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour {
         //Debug.Log( "flags: " + _controller.collisionState + ", hit.normal: " + hit.normal );
     }
 
-
     void onTriggerEnterEvent(Collider2D col) {
         Debug.Log("onTriggerEnterEvent: " + col.gameObject.name);
         if (col.gameObject.tag == "Collectable")
@@ -59,8 +58,11 @@ public class PlayerController : MonoBehaviour {
             }
             Destroy(col.gameObject);
         }
+        else if (col.gameObject.tag == "Projectile")
+        {
+            Debug.Log("Hit Projectile!");
+        }
     }
-
 
     void onTriggerExitEvent(Collider2D col) {
         Debug.Log("onTriggerExitEvent: " + col.gameObject.name);

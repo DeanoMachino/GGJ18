@@ -215,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterTesty: {fileID: 1010841450681678, guid: 2e1d69518df5e3542b86c0b6729d6e7f,
     type: 2}
+  GameEnded: 0
 --- !u!1001 &1244673999
 Prefab:
   m_ObjectHideFlags: 0
