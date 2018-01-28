@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private int _playerID;
+    public int _playerID;
 
     Rigidbody2D Rigidbody;
 
